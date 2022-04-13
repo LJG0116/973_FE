@@ -1,13 +1,20 @@
 import React from 'react';
-import Layout from './components/Layout/Layout';
+import { Route, Switch } from 'react-router-dom';
+import HomePage from '@pages/HomePage';
 
 function App() {
   return (
-    <div className="App">
-      <Layout>
-        <div>hello react!</div>
-      </Layout>
-    </div>
+    <Switch>
+      <Route path="/" exact component={HomePage} />
+      <Route path="/signup" exact component={HomePage} />
+      <Route path="/signin" exact component={HomePage} />
+      <Route path="/my" exact component={HomePage} />
+      <Route path="/student" exact component={HomePage} />
+      <Route path="/teacher" exact component={HomePage} />
+      <Route path="/write" exact component={HomePage} />
+      <Route path="/view/:id" exact component={HomePage} />
+      <Route path="/edit/:id" exact component={HomePage} />
+    </Switch>
   );
 }
 
