@@ -1,0 +1,45 @@
+.root {
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+  width: 100%;
+  height: 3rem;
+  box-shadow: 0px 8px 8px -8px rgba(0, 0, 0, 0.15);
+}
+
+.title {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #0099cc;
+  background-color: #ffffff;
+}
+
+.category {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  width: 30%;
+  margin: 0 1rem;
+
+  & button {
+    background-color: #ffffff;
+
+    &:hover {
+      color: #0099cc;
+    }
+  }
+}
+
+.my {
+  background-color: #ffffff;
+
+  &:hover {
+    color: #0099cc;
+  }
+}
