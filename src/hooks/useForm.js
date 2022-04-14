@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
+import { validationEmail } from '@utils/validation';
 
-const useForm = ({ initialValues, onSubmit, validate }) => {
+const useForm = ({ initialValues, onSubmit, onClick, validate }) => {
   const [values, setValues] = useState(initialValues);
   const [errors, setErrors] = useState({});
   const [isLoading, setIsLoading] = useState(false);
@@ -12,6 +13,24 @@ const useForm = ({ initialValues, onSubmit, validate }) => {
     },
     []
   );
+
+  // signup 중복확인 click event hook
+  const handleClick = async (e) => {
+    setIsLoading(true);
+    e.preventDefault();
+
+    const newErrors = {};
+    const { email } = values;
+    if (!email) newErrors.email = '이메일을 입력해주세요.';
+    else if (!validationEmail(email))
+      newErrors.email = '잘못된 이메일 형식입니다.';
+
+    if (!newErrors || Object.keys(newErrors).length === 0) {
+      await onClick(values);
+      setErrors({ newErrors });
+    } else setErrors(newErrors);
+    setIsLoading(false);
+  };
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -50,6 +69,7 @@ const useForm = ({ initialValues, onSubmit, validate }) => {
     isLoading,
     setValues,
     handleChange,
+    handleClick,
     handleSubmit,
     handleImageUpload,
   };
