@@ -1,0 +1,101 @@
+@import '@styles/constants';
+
+@mixin root {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  width: 100%;
+}
+
+@mixin input__large {
+  width: 50%;
+  height: 4rem;
+
+  border-radius: 0.75rem;
+  border: 1px $main__gray solid;
+
+  padding: 0 0.5rem;
+}
+
+@mixin input__small {
+  width: 80%;
+  height: 4rem;
+
+  border-radius: 0.75rem;
+  border: 1px $main__gray solid;
+
+  padding: 0 0.5rem;
+  margin-right: 0.5rem;
+}
+
+@mixin button_large {
+  width: 50%;
+  height: 3rem;
+
+  border-radius: 0.75rem;
+  border: 0;
+
+  margin-top: 1rem;
+  background-color: $primary;
+  color: $main__white;
+
+  &:hover {
+    background-color: $secondary;
+  }
+}
+
+@mixin button_small {
+  width: 20%;
+  height: 4rem;
+
+  border-radius: 0.75rem;
+  border: 0;
+
+  background-color: $primary;
+  color: $main__white;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+
+  &:hover {
+    background-color: $secondary;
+  }
+
+  &.confirm {
+    width: 49%;
+  }
+}
+
+@mixin title {
+  color: $primary;
+  margin-bottom: 2rem;
+}
+
+@mixin wrapper {
+  display: flex;
+  width: 50%;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@mixin text__wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 1rem 0;
+}
+
+@mixin error {
+  margin: 0.75rem 0;
+  text-align: center;
+  color: $main__red;
+  font-size: 0.75rem;
+}
+
+@mixin text {
+  margin: 0 1rem;
+  text-align: center;
+  font-size: 0.75rem;
+  cursor: pointer;
+}

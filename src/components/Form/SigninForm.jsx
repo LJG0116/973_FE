@@ -21,7 +21,7 @@ const SigninForm = (props) => {
     <form className={className} onSubmit={onSubmit}>
       <h1 className={styles.title}>Login</h1>
       <input
-        className={styles.input_large}
+        className={styles.input__large}
         type="text"
         value={values.email}
         name="email"
@@ -30,7 +30,7 @@ const SigninForm = (props) => {
       />
       <div className={styles.error}>{errors.email}&nbsp;</div>
       <input
-        className={styles.input_large}
+        className={styles.input__large}
         type="password"
         value={values.password}
         name="password"
@@ -38,10 +38,10 @@ const SigninForm = (props) => {
         onChange={onChange}
       />
       <div className={styles.error}>{errors.password}&nbsp;</div>
-      <button className={styles.button_large} type="submit">
+      <button className={styles.button__large} type="submit">
         로그인
       </button>
-      <div className={styles.text_wrapper}>
+      <div className={styles.text__wrapper}>
         <span
           className={styles.text}
           onClick={() => {

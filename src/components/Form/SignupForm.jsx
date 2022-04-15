@@ -23,14 +23,18 @@ const SignupForm = (props) => {
       <h1 className={styles.title}>회원가입</h1>
       <div className={styles.wrapper}>
         <input
-          className={styles.input_small}
+          className={styles.input__small}
           type="text"
           value={values.email}
           name="email"
           placeholder="이메일을 입력하세요."
           onChange={onChange}
         />
-        <button className={styles.button_small} type="button" onClick={onClick}>
+        <button
+          className={styles.button__small}
+          type="button"
+          onClick={onClick}
+        >
           확인
         </button>
       </div>
@@ -38,7 +42,7 @@ const SignupForm = (props) => {
         {errors.emailCheck || errors.email}&nbsp;
       </div>
       <input
-        className={styles.input_large}
+        className={styles.input__large}
         type="password"
         value={values.password}
         name="password"
@@ -47,7 +51,7 @@ const SignupForm = (props) => {
       />
       <div className={styles.error}>{errors.password}&nbsp;</div>
       <input
-        className={styles.input_large}
+        className={styles.input__large}
         type="password"
         value={values.passwordCheck}
         name="passwordCheck"
@@ -57,13 +61,13 @@ const SignupForm = (props) => {
       <div className={styles.error}>{errors.passwordCheck}&nbsp;</div>
       <div className={styles.wrapper}>
         <button
-          className={cx(styles.button_small, styles.confirm)}
+          className={cx(styles.button__small, styles.confirm)}
           type="submit"
         >
           회원가입
         </button>
         <button
-          className={cx(styles.button_small, styles.confirm)}
+          className={cx(styles.button__small, styles.confirm)}
           type="button"
           onClick={() => history.push('/')}
         >
