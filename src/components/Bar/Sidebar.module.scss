@@ -1,0 +1,21 @@
+@import '@styles/constants';
+
+.root {
+  width: 15%;
+  height: 100%;
+  // background: linear-gradient(to right, $primary, $point);
+  background-color: $primary;
+}
+
+.list {
+  font-size: 0.75rem;
+  list-style: none;
+  padding: 1.25rem 2rem;
+  color: $main__white;
+  cursor: pointer;
+
+  &:hover {
+    background-color: $main__white;
+    color: $primary;
+  }
+}
