@@ -1,0 +1,63 @@
+@import '@styles/mixins';
+@import '@styles/constants';
+
+.root {
+  @include root();
+  height: calc(100vh - 3rem);
+}
+
+.profile__wrapper {
+  width: 70%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.disabled__input {
+  display: none;
+}
+
+.profile__upload {
+  width: 10rem;
+  height: 10rem;
+  border-radius: 50%;
+  border: 1px $main__gray solid;
+  margin-right: 2rem;
+}
+
+.profile__image {
+  width: 10rem;
+  height: 10rem;
+  border-radius: 50%;
+}
+
+.profile__input {
+  @include input__small();
+  width: 70%;
+  height: 2rem;
+}
+
+.profile__textarea {
+  width: 70%;
+  height: 10rem;
+  border-radius: 12px;
+  margin-top: 2rem;
+  padding: 0.5rem;
+
+  border: 1px $main__gray solid;
+}
+
+.profile_button_small {
+  @include button_small();
+  width: 10%;
+  height: 2rem;
+}
+
+.profile_button_large {
+  @include button_large();
+  width: 70%;
+}
+
+.title {
+  @include title();
+}
