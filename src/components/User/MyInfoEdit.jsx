@@ -38,7 +38,7 @@ const MyInfoEdit = (props) => {
               values.srcUrl ||
               'https://user-images.githubusercontent.com/69751205/163665912-a318a7a0-3c6f-4fd3-a8b0-d684811aa7ca.jpeg'
             }
-            alt="https://user-images.githubusercontent.com/69751205/163665912-a318a7a0-3c6f-4fd3-a8b0-d684811aa7ca.jpeg"
+            alt=""
           />
         </div>
         <input
@@ -46,6 +46,7 @@ const MyInfoEdit = (props) => {
           type="text"
           name="nickname"
           value={values.name}
+          placeholder="변경할 이메일을 입력해주세요."
           onChange={onChange}
         />
         <button
@@ -61,6 +62,7 @@ const MyInfoEdit = (props) => {
         type="text"
         name="introduce"
         value={values.introduce}
+        placeholder="멋진 한 줄 소개를 입력해주세요."
         onChange={onChange}
       />
       <button className={styles.profile_button_large} type="submit">

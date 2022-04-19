@@ -12,7 +12,7 @@
 
 @mixin input__large {
   width: 50%;
-  height: 4rem;
+  height: 3rem;
 
   border-radius: 0.75rem;
   border: 1px $main__gray solid;
@@ -22,7 +22,7 @@
 
 @mixin input__small {
   width: 80%;
-  height: 4rem;
+  height: 3rem;
 
   border-radius: 0.75rem;
   border: 1px $main__gray solid;
@@ -49,14 +49,13 @@
 
 @mixin button_small {
   width: 20%;
-  height: 4rem;
+  height: 3rem;
 
   border-radius: 0.75rem;
   border: 0;
 
   background-color: $primary;
   color: $main__white;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
 
   &:hover {
     background-color: $secondary;
