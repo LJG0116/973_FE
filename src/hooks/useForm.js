@@ -34,11 +34,13 @@ const useForm = ({ initialValues, onSubmit, onClick, validate }) => {
 
   const handleChange = (e) => {
     const { name, value } = e.target;
+    console.log(name, ' : ', value);
     setValues({ ...values, [name]: value });
   };
 
   const handleSubmit = async (e) => {
     setIsLoading(true);
+    console.log(values);
     e.preventDefault();
     const newErrors = validate(values);
     if (!newErrors || Object.keys(newErrors).length === 0) {

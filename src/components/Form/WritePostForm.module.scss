@@ -1,0 +1,58 @@
+@import '@styles/mixins';
+@import '@styles/constants';
+
+.root {
+  @include root();
+}
+
+.disabled__input {
+  display: none;
+}
+
+.title {
+  @include title();
+}
+
+.wrapper {
+  width: 70%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.post__input {
+  @include input__large();
+  width: 70%;
+}
+
+.post__upload {
+  width: 70%;
+  height: 30rem;
+
+  border-radius: 0.75rem;
+  background-color: #c4c4c4;
+  margin-bottom: 1rem;
+}
+
+.post__image {
+  width: 100%;
+  height: 30rem;
+  border-radius: 0.75rem;
+}
+
+.post__textarea {
+  @include textarea();
+  margin-top: 1rem;
+}
+
+.post__select {
+  width: 8rem;
+  border-radius: 0.75rem;
+  border: 1px $main__gray solid;
+
+  padding: 0 0.5rem;
+}
+
+.post_button_large {
+  @include button_large();
+  width: 70%;
+}

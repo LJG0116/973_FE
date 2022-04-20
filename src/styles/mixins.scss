@@ -8,6 +8,7 @@
   align-items: center;
 
   width: 100%;
+  // margin-top: 3rem;
 }
 
 @mixin input__large {
@@ -97,4 +98,14 @@
   text-align: center;
   font-size: 0.75rem;
   cursor: pointer;
+}
+
+@mixin textarea {
+  width: 70%;
+  height: 10rem;
+  border-radius: 12px;
+  margin-top: 2rem;
+  padding: 0.5rem;
+
+  border: 1px $main__gray solid;
 }
