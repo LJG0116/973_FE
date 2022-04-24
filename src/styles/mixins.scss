@@ -6,25 +6,26 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  min-height: calc(100vh - 48px);
 
   width: 100%;
 }
 
 @mixin input__large {
   width: 50%;
-  height: 3rem;
+  height: 48px;
 
-  border-radius: 0.75rem;
+  border-radius: 12px;
   border: 1px $main__gray solid;
 
-  padding: 0 0.5rem;
+  padding: 0 8px;
 }
 
 @mixin input__small {
   width: 80%;
-  height: 3rem;
+  height: 48px;
 
-  border-radius: 0.75rem;
+  border-radius: 12px;
   border: 1px $main__gray solid;
 
   padding: 0 0.5rem;
@@ -33,12 +34,11 @@
 
 @mixin button_large {
   width: 50%;
-  height: 3rem;
+  height: 48px;
 
-  border-radius: 0.75rem;
+  border-radius: 12px;
   border: 0;
 
-  margin-top: 1rem;
   background-color: $primary;
   color: $main__white;
 
@@ -49,9 +49,9 @@
 
 @mixin button_small {
   width: 20%;
-  height: 3rem;
+  height: 48px;
 
-  border-radius: 0.75rem;
+  border-radius: 12px;
   border: 0;
 
   background-color: $primary;
@@ -60,15 +60,11 @@
   &:hover {
     background-color: $secondary;
   }
-
-  &.confirm {
-    width: 49%;
-  }
 }
 
 @mixin title {
   color: $primary;
-  margin-bottom: 2rem;
+  margin-bottom: 32px;
 }
 
 @mixin wrapper {
@@ -82,19 +78,19 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 1rem 0;
+  margin: 16px 0;
 }
 
 @mixin error {
-  margin: 0.75rem 0;
+  margin: 12px 0;
   text-align: center;
   color: $main__red;
-  font-size: 0.75rem;
+  font-size: 12px;
 }
 
 @mixin text {
-  margin: 0 1rem;
+  margin: 0 16px;
   text-align: center;
-  font-size: 0.75rem;
+  font-size: 12px;
   cursor: pointer;
 }

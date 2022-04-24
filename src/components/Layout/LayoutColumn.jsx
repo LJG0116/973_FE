@@ -4,7 +4,7 @@ import classNames from 'classnames/bind';
 
 const cx = classNames.bind(styles);
 
-const LayoutColumn = (props) => {
+const Layout = (props) => {
   const { children, className: rootClassName } = props;
 
   const className = cx(styles.root, rootClassName);
@@ -12,4 +12,4 @@ const LayoutColumn = (props) => {
   return <div className={className}>{children}</div>;
 };
 
-export default LayoutColumn;
+export default Layout;

@@ -3,14 +3,11 @@
 
 .root {
   @include root();
-  height: calc(100vh - 3rem);
 }
 
 .profile__wrapper {
   width: 70%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  margin-bottom: 32px;
 }
 
 .disabled__input {
@@ -18,40 +15,35 @@
 }
 
 .profile__upload {
-  width: 10rem;
-  height: 10rem;
-  border-radius: 50%;
-  border: 1px $main__gray solid;
-  margin-right: 2rem;
-}
+  width: 288px;
+  height: 288px;
+  margin: 0 auto 32px;
 
-.profile__image {
-  width: 10rem;
-  height: 10rem;
-  border-radius: 50%;
+  & .profile__image {
+    width: inherit;
+    height: inherit;
+    border-radius: 50%;
+  }
 }
 
 .profile__input {
   @include input__small();
   width: 70%;
-  height: 2rem;
   margin-right: 26px;
 }
 
 .profile__textarea {
   width: 70%;
-  height: 10rem;
+  height: 160px;
   border-radius: 12px;
-  margin-top: 2rem;
-  padding: 0.5rem;
-
+  padding: 8px;
+  resize: none;
   border: 1px $main__gray solid;
+  margin-bottom: 32px;
 }
 
 .profile_button_small {
   @include button_small();
-  width: 20%;
-  height: 2rem;
 }
 
 .profile_button_large {

@@ -1,10 +1,10 @@
 import React, { useRef } from 'react';
-import styles from './MyInfoEdit.module.scss';
+import styles from './MyInfoEditForm.module.scss';
 import classNames from 'classnames/bind';
 
 const cx = classNames.bind(styles);
 
-const MyInfoEdit = (props) => {
+const MyInfoEditForm = (props) => {
   const {
     values,
     onChange,
@@ -72,4 +72,4 @@ const MyInfoEdit = (props) => {
   );
 };
 
-export default MyInfoEdit;
+export default MyInfoEditForm;

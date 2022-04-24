@@ -1,6 +1,6 @@
 import React from 'react';
-import { LayoutColumn } from '@components/Layout';
-import { MyInfoEditContainer } from '@containers/User';
+import { LayoutRow } from '@components/Layout';
+import { MyInfoEditFormContainer } from '@containers/Form';
 import { Sidebar } from '@components/Bar';
 
 const MyPage = (props) => {
@@ -11,10 +11,10 @@ const MyPage = (props) => {
   /my/edit -> MyInfoEditContainer
   */
   return (
-    <LayoutColumn>
+    <LayoutRow>
       <Sidebar />
-      <MyInfoEditContainer />
-    </LayoutColumn>
+      <MyInfoEditFormContainer />
+    </LayoutRow>
   );
 };
 

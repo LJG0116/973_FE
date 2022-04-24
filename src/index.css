@@ -1,51 +1,32 @@
-@import url(https://cdn.jsdelivr.net/gh/sunghyunzz/eulyoo1945/eulyoo1945.css);
-
 * {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
-  /* font-family: 'Eulyoo1945', serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale; */
-}
 
-/* html {
-  font-family: 'Eulyoo1945', serif;
-} */
-
-@media screen and (max-width: 768px) {
-  html {
-    font-size: 13px;
-  }
+  font-family: 'Noto Sans KR', sans-serif;
 }
 
 body {
-  /* font-family: 'Eulyoo1945', serif; */
-  overflow-y: scroll;
-  overflow-x: hidden;
-  /* background-color: #f2f2f2; */
+  -ms-overflow-style: none;
+}
+::-webkit-scrollbar {
+  display: none;
 }
 
-/* ::selection {
-  background-color: #8effe1;
-} */
-
-/* code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-} */
-
+/* Reset CSS */
 a {
   color: inherit;
   text-decoration: none;
 }
 
-a,
 button,
+input,
 textarea {
-  cursor: pointer;
   outline: none;
   border: none;
+  font-size: 16px;
+  background-color: inherit;
+  cursor: pointer;
 }
 
 button:focus,
@@ -55,4 +36,13 @@ input:active,
 textarea:focus,
 textarea:active {
   outline: none;
+  box-shadow: none;
+}
+
+ul,
+ol,
+li {
+  list-style-type: none;
+  padding-left: 0;
+  margin-left: 0;
 }

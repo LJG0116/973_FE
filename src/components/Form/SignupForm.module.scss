@@ -18,6 +18,14 @@
 
 .button__small {
   @include button_small();
+
+  &.confirm {
+    width: 50%;
+  }
+
+  &.confirm:first-child {
+    margin-right: 8px;
+  }
 }
 
 .title {

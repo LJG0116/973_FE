@@ -1,16 +1,16 @@
 @import '@styles/constants';
 
 .root {
-  width: 15%;
-  height: 100%;
-  // background: linear-gradient(to right, $primary, $point);
+  width: 25%;
+  min-height: calc(100vh - 48px);
   background-color: $primary;
+  flex-shrink: 0;
 }
 
 .list {
-  font-size: 0.75rem;
+  font-size: 14px;
   list-style: none;
-  padding: 1.25rem 2rem;
+  padding: 20px 32px;
   color: $main__white;
   cursor: pointer;
 

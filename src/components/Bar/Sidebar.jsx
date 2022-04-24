@@ -26,14 +26,6 @@ const Sidebar = (props) => {
       >
         내 게시판
       </li>
-      <li
-        className={styles.list}
-        onClick={() => {
-          history.push('/my/chat');
-        }}
-      >
-        내 채팅
-      </li>
     </ul>
   );
 };

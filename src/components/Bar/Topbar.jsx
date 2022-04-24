@@ -10,9 +10,9 @@ const Topbar = (props) => {
   const className = cx(styles.root, rootClassName);
 
   return (
-    <div className={className}>
+    <header className={className}>
       <button
-        className={styles.title}
+        className={styles.logo}
         type="button"
         onClick={() => {
           history.push('/');
@@ -46,16 +46,26 @@ const Topbar = (props) => {
           동아리
         </button>
       </div>
-      <button
-        className={styles.my}
-        type="button"
-        onClick={() => {
-          history.push('/my');
-        }}
-      >
-        마이페이지
-      </button>
-    </div>
+      <div className={styles.user}>
+        {/* 로그인? 마이페이지 : 로그인 */}
+        <button
+          type="button"
+          onClick={() => {
+            history.push('/my');
+          }}
+        >
+          로그인
+        </button>
+        <button
+          type="button"
+          onClick={() => {
+            history.push('/chat');
+          }}
+        >
+          채팅
+        </button>
+      </div>
+    </header>
   );
 };
 

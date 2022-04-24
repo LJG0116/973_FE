@@ -1,12 +1,12 @@
 import React from 'react';
 import { SignupFormContainer } from '@containers/Form';
-import { Layout } from '@components/Layout';
+import { LayoutColumn } from '@components/Layout';
 
 const SignupPage = (props) => {
   return (
-    <Layout>
+    <LayoutColumn>
       <SignupFormContainer />
-    </Layout>
+    </LayoutColumn>
   );
 };
 
