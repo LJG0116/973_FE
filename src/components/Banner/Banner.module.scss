@@ -1,0 +1,37 @@
+@import '@styles/constants';
+@import '@styles/mixins';
+
+.root {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  height: 520px;
+  background-color: $primary;
+  padding-right: 48px;
+}
+
+.banner__title {
+  font-size: 108px;
+  font-weight: 700;
+  color: #ffffff;
+  font-style: italic;
+
+  // background: linear-gradient(45deg, #000080, $point);
+  // color: transparent;
+  // -webkit-background-clip: text;
+}
+
+.banner__image {
+  width: 640px;
+  height: 360px;
+}
+
+.banner__text {
+  font-size: 48px;
+  font-weight: 700;
+  color: #ffffff;
+  text-align: end;
+  line-height: 1;
+  white-space: nowrap;
+}
