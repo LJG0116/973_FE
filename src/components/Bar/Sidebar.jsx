@@ -21,6 +21,14 @@ const Sidebar = (props) => {
       <li
         className={styles.list}
         onClick={() => {
+          history.push('/my/');
+        }}
+      >
+        비밀번호 수정
+      </li>
+      <li
+        className={styles.list}
+        onClick={() => {
           history.push('/my/post');
         }}
       >

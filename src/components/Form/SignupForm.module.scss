@@ -1,11 +1,11 @@
 @import '@styles/mixins';
 
 .root {
-  @include root();
+  @include container__column();
 }
 
 .wrapper {
-  @include wrapper();
+  @include container__row();
 }
 
 .input__large {

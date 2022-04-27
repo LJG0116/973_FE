@@ -1,19 +1,40 @@
 @import '@styles/constants';
 
-@mixin root {
+@mixin container__column {
   position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  min-height: calc(100vh - 48px);
+  flex-grow: 0;
+  padding: $main__padding__size;
 
+  width: 570px;
+
+  border-radius: 12px;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;
+
+  animation: fadein 2s;
+  @keyframes fadein {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+}
+
+@mixin container__row {
+  display: flex;
   width: 100%;
+  justify-content: space-between;
+  align-items: center;
 }
 
 @mixin input__large {
-  width: 50%;
-  height: 48px;
+  width: 100%;
+  height: $main__height;
 
   border-radius: 12px;
   border: 1px $main__gray solid;
@@ -22,8 +43,8 @@
 }
 
 @mixin input__small {
-  width: 80%;
-  height: 48px;
+  width: 100%;
+  height: $main__height;
 
   border-radius: 12px;
   border: 1px $main__gray solid;
@@ -33,8 +54,8 @@
 }
 
 @mixin button_large {
-  width: 50%;
-  height: 48px;
+  width: 100%;
+  height: $main__height;
 
   border-radius: 12px;
   border: 0;
@@ -44,12 +65,13 @@
 
   &:hover {
     background-color: $secondary;
+    transition: background-color 300ms ease-in-out;
   }
 }
 
 @mixin button_small {
   width: 20%;
-  height: 48px;
+  height: $main__height;
 
   border-radius: 12px;
   border: 0;
@@ -59,6 +81,7 @@
 
   &:hover {
     background-color: $secondary;
+    transition: background-color 300ms ease-in-out;
   }
 }
 
@@ -67,18 +90,11 @@
   margin-bottom: 32px;
 }
 
-@mixin wrapper {
-  display: flex;
-  width: 50%;
-  justify-content: space-between;
-  align-items: center;
-}
-
 @mixin text__wrapper {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 16px 0;
+  margin: 12px 0;
 }
 
 @mixin error {

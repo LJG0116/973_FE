@@ -1,13 +1,19 @@
 @import '@styles/constants';
+@import '@styles/mixins';
 
 .root {
-  width: 25%;
-  min-height: calc(100vh - 48px);
+  @include container__column();
+  justify-content: flex-start;
+  align-items: flex-start;
+  width: 256px;
   background-color: $primary;
   flex-shrink: 0;
+  margin-right: $main__margin__size;
+  padding: 16px 0;
 }
 
 .list {
+  width: 100%;
   font-size: 14px;
   list-style: none;
   padding: 20px 32px;
@@ -17,5 +23,6 @@
   &:hover {
     background-color: $main__white;
     color: $primary;
+    transition: color 500ms ease-in-out, background-color 500ms ease-in-out;
   }
 }

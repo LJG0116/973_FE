@@ -1,6 +1,8 @@
+@import '@styles/constants';
+
 .root {
-  height: calc(100vh - 48px);
+  min-height: calc(100vh - 144px);
   display: flex;
   justify-content: flex-start;
-  align-items: flex-start;
+  margin: $main__margin__size;
 }

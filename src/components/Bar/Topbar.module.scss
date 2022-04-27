@@ -8,12 +8,10 @@
   padding: 0 18px;
 
   height: 48px;
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.05), 0px 1px 3px rgba(0, 0, 0, 0.1),
-    inset 0px 1px 0px rgba(255, 255, 255, 0.1);
 }
 
 .logo {
-  font-size: 18px;
+  font-size: 20px;
   font-weight: 700;
   color: $primary;
 }
@@ -22,12 +20,13 @@
   flex-shrink: 0;
 
   & button {
-    font-size: 14px;
+    font-weight: 700;
     padding: 0 24px;
     color: $secondary;
 
     &:hover {
       color: $primary;
+      transition: color 300ms ease-in-out;
     }
   }
 }
@@ -36,12 +35,13 @@
   flex-shrink: 0;
   height: 36px;
   border-radius: 18px;
-  border: 1px $secondary solid;
+  border: 2px $primary solid;
   padding: 0 12px;
 
   & button {
-    font-size: 12px;
-    line-height: 3;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 32px;
     color: $primary;
   }
 

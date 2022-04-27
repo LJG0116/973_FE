@@ -2,12 +2,13 @@
 @import '@styles/constants';
 
 .root {
-  @include root();
+  @include container__column();
+  width: 100%;
 }
 
 .profile__wrapper {
   width: 70%;
-  margin-bottom: 32px;
+  margin-bottom: $main__margin__size;
 }
 
 .disabled__input {
@@ -15,9 +16,9 @@
 }
 
 .profile__upload {
-  width: 288px;
-  height: 288px;
-  margin: 0 auto 32px;
+  width: 216px;
+  height: 216px;
+  margin: 0 auto $main__margin__size;
 
   & .profile__image {
     width: inherit;
@@ -26,20 +27,24 @@
   }
 }
 
+.profile__input__wrapper {
+  display: flex;
+  width: 100%;
+}
+
 .profile__input {
   @include input__small();
-  width: 70%;
-  margin-right: 26px;
+  margin-right: 8px;
 }
 
 .profile__textarea {
   width: 70%;
-  height: 160px;
+  height: 96px;
   border-radius: 12px;
   padding: 8px;
   resize: none;
   border: 1px $main__gray solid;
-  margin-bottom: 32px;
+  margin-bottom: $main__margin__size;
 }
 
 .profile_button_small {

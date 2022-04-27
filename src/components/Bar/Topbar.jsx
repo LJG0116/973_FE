@@ -27,7 +27,7 @@ const Topbar = (props) => {
             history.push('/student');
           }}
         >
-          학생
+          플레이어
         </button>
         <button
           type="button"
@@ -35,15 +35,7 @@ const Topbar = (props) => {
             history.push('/teacher');
           }}
         >
-          선생님
-        </button>
-        <button
-          type="button"
-          onClick={() => {
-            history.push('/club');
-          }}
-        >
-          동아리
+          코치
         </button>
       </div>
       <div className={styles.user}>
