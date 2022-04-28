@@ -33,3 +33,15 @@
 .post_button_large {
   @include button_large();
 }
+
+.modal {
+  width: 100%;
+  font-size: 18px;
+  color: $secondary;
+  margin-bottom: $main__margin__size;
+  cursor: pointer;
+
+  &:hover {
+    color: $primary;
+  }
+}
