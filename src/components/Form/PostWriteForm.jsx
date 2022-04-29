@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import styles from './PostWriteForm.module.scss';
 import classNames from 'classnames/bind';
 import { withRouter } from 'react-router-dom';
-import { LocationModal } from '@components/Modal';
+import { LocationModal, SportModal } from '@components/Modal';
 
 const cx = classNames.bind(styles);
 
@@ -16,10 +16,15 @@ const PostWriteForm = (props) => {
     className: rootClassName,
   } = props;
   const [isLocationOpen, setIsLocationOpen] = useState(true);
+  const [isSportOpen, setIsSportOpen] = useState(true);
   const className = cx(styles.root, rootClassName);
 
-  const handleClick = () => {
+  const handleLocationClick = () => {
     setIsLocationOpen(!isLocationOpen);
+  };
+
+  const handleSportClick = () => {
+    setIsSportOpen(!isSportOpen);
   };
 
   return (
@@ -36,17 +41,25 @@ const PostWriteForm = (props) => {
           onChange={onChange}
         />
       </div>
-      {/* 과목 */}
-      <div className={styles.modal} onClick={handleClick}>
-        과목 선택하기 &gt;
-      </div>
       {/* 위치 */}
-      <div className={styles.modal} onClick={handleClick}>
+      <div className={styles.modal} onClick={handleLocationClick}>
         지역 선택하기 &gt;
       </div>
       {isLocationOpen ? (
         <LocationModal
-          onClick={handleClick}
+          onClick={handleLocationClick}
+          onLocationClick={onLocationClick}
+        />
+      ) : (
+        ''
+      )}
+      {/* 종목 */}
+      <div className={styles.modal} onClick={handleSportClick}>
+        종목 선택하기 &gt;
+      </div>
+      {isSportOpen ? (
+        <SportModal
+          onClick={handleSportClick}
           onLocationClick={onLocationClick}
         />
       ) : (

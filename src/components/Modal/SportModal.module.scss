@@ -1,0 +1,83 @@
+@import '@styles/constants';
+@import '@styles/mixins';
+
+.root {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+
+  min-height: 100vh;
+  background-color: #00000080;
+  padding: $main__padding__size;
+  z-index: 1;
+}
+
+.modal__wrapper {
+  position: relative;
+  width: 70%;
+  min-height: 70%;
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 64px;
+
+  overflow: scroll;
+}
+
+.sub__title {
+  font-weight: 400;
+  margin-bottom: $main__margin__size;
+
+  &:hover {
+    color: $primary;
+  }
+}
+
+.badge__wrapper {
+  border-radius: 12px;
+  border: 1px $main__gray solid;
+  padding: $sub__padding__size;
+  margin-bottom: $main__margin__size;
+}
+
+.badge {
+  display: inline-block;
+  border: 1px $primary solid;
+  border-radius: 48px;
+  padding: 4px;
+  margin: 2px;
+  color: $primary;
+  font-size: 12px;
+  cursor: pointer;
+  letter-spacing: -1px;
+
+  &:hover {
+    background-color: $primary;
+    color: $main__white;
+  }
+}
+
+.selected__wrapper {
+  margin-bottom: $main__margin__size;
+}
+
+.button__wrapper {
+  position: absolute;
+  right: 24px;
+  bottom: 24px;
+}
+
+.button {
+  padding: 8px;
+  margin: 0 4px;
+
+  &:hover {
+    color: $primary;
+  }
+}
