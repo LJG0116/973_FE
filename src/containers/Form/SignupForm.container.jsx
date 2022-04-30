@@ -4,7 +4,14 @@ import { useForm } from '@hooks';
 import { validationPassword } from '@utils/validation';
 
 const SignupFormContainer = (props) => {
-  const { values, errors, handleChange, handleSubmit, handleClick } = useForm({
+  const {
+    values,
+    errors,
+    handleChange,
+    handleSubmit,
+    handleEmailClick,
+    handleNicknameClick,
+  } = useForm({
     initialValues: {
       email: '',
       password: '',
@@ -37,7 +44,8 @@ const SignupFormContainer = (props) => {
       values={values}
       errors={errors}
       onChange={handleChange}
-      onClick={handleClick}
+      onEmailClick={handleEmailClick}
+      onNicknameClick={handleNicknameClick}
       onSubmit={handleSubmit}
     />
   );

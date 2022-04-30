@@ -14,8 +14,8 @@ const useForm = ({ initialValues, onSubmit, onClick, validate }) => {
     []
   );
 
-  // signup 중복확인 click event hook
-  const handleClick = async (e) => {
+  // signup 이메일 중복확인 click event hook
+  const handleEmailClick = async (e) => {
     setIsLoading(true);
     e.preventDefault();
 
@@ -24,6 +24,22 @@ const useForm = ({ initialValues, onSubmit, onClick, validate }) => {
     if (!email) newErrors.email = '이메일을 입력해주세요.';
     else if (!validationEmail(email))
       newErrors.email = '잘못된 이메일 형식입니다.';
+
+    if (!newErrors || Object.keys(newErrors).length === 0) {
+      await onClick(values);
+      setErrors({ newErrors });
+    } else setErrors(newErrors);
+    setIsLoading(false);
+  };
+
+  // signup 닉네임 중복확인 click event hook
+  const handleNicknameClick = async (e) => {
+    setIsLoading(true);
+    e.preventDefault();
+
+    const newErrors = {};
+    const { email } = values;
+    if (!email) newErrors.email = '닉네임을 입력해주세요.';
 
     if (!newErrors || Object.keys(newErrors).length === 0) {
       await onClick(values);
@@ -80,7 +96,8 @@ const useForm = ({ initialValues, onSubmit, onClick, validate }) => {
     isLoading,
     setValues,
     handleChange,
-    handleClick,
+    handleEmailClick,
+    handleNicknameClick,
     handleSubmit,
     handleImageUpload,
     handleLocationClick,

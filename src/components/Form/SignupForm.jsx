@@ -10,7 +10,8 @@ const SignupForm = (props) => {
     values = {},
     errors = {},
     onChange = () => console.log('onChange'),
-    onClick = () => console.log('onClick'),
+    onEmailClick = () => console.log('onClick'),
+    onNicknameClick = () => console.log('onClick'),
     onSubmit = () => console.log('onChange'),
     history,
     className: rootClassName,
@@ -33,7 +34,27 @@ const SignupForm = (props) => {
         <button
           className={styles.button__small}
           type="button"
-          onClick={onClick}
+          onClick={onEmailClick}
+        >
+          확인
+        </button>
+      </div>
+      <div className={styles.error}>
+        {errors.emailCheck || errors.email}&nbsp;
+      </div>
+      <div className={styles.wrapper}>
+        <input
+          className={styles.input__small}
+          type="text"
+          value={values.nickname}
+          name="email"
+          placeholder="닉네임을 입력하세요."
+          onChange={onChange}
+        />
+        <button
+          className={styles.button__small}
+          type="button"
+          onClick={onNicknameClick}
         >
           확인
         </button>

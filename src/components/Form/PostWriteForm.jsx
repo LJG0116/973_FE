@@ -9,7 +9,6 @@ const cx = classNames.bind(styles);
 const PostWriteForm = (props) => {
   const {
     values = {},
-    errors = {},
     onChange = () => console.log('onChange'),
     onSubmit = () => console.log('onSubmit'),
     onLocationClick = () => console.log('onLocationClick'),
