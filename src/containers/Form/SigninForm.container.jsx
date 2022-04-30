@@ -2,6 +2,7 @@ import React from 'react';
 import { SigninForm } from '@components/Form';
 import { useForm } from '@hooks';
 import { validationEmail } from '@utils/validation';
+import { postSignin } from '../../components/apis/auth';
 
 const SigninFormContainer = (props) => {
   const { values, errors, handleChange, handleSubmit } = useForm({
@@ -9,8 +10,9 @@ const SigninFormContainer = (props) => {
       email: '',
       password: '',
     },
-    onSubmit: (e) => {
-      console.log(e);
+    onSubmit: ({ email, password }) => {
+      const response = postSignin({ email, password });
+      console.log(response);
     },
     validate: ({ email, password }) => {
       const newErrors = {};
