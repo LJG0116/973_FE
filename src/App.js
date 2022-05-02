@@ -6,6 +6,7 @@ import {
   SignupPage,
   MyPage,
   PostWritePage,
+  PostDetailPage,
 } from '@pages';
 import { Topbar } from '@components/Bar';
 
@@ -23,7 +24,7 @@ function App() {
         <Route path="/club" exact component={HomePage} />
         <Route path="/write/player" exact component={PostWritePage} />
         <Route path="/write/coach" exact component={PostWritePage} />
-        <Route path="/view/:id" exact component={HomePage} />
+        <Route path="/view" exact component={PostDetailPage} />
         <Route path="/edit/:id" exact component={HomePage} />
       </Switch>
     </>

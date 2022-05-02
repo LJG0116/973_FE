@@ -110,3 +110,26 @@
   font-size: 12px;
   cursor: pointer;
 }
+
+@mixin modal {
+  width: 100%;
+  font-size: 18px;
+  color: $secondary;
+  margin-bottom: $main__margin__size;
+  cursor: pointer;
+
+  &:hover {
+    color: $primary;
+  }
+}
+
+@mixin post__textarea {
+  width: 100%;
+  height: 216px;
+  resize: none;
+
+  border-radius: 12px;
+  border: 1px $main__gray solid;
+  margin-bottom: $main__margin__size;
+  padding: 12px;
+}

@@ -13,7 +13,17 @@
 .wrapper {
   width: 100%;
   display: flex;
+  justify-content: space-between;
+  align-items: center;
   margin-bottom: $main__margin__size;
+  & .post__author {
+    color: $primary;
+    margin-right: 8px;
+  }
+
+  & .post__date {
+    color: $main__gray;
+  }
 }
 .post__input {
   @include input__large();
