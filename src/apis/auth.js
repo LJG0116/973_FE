@@ -1,10 +1,14 @@
 import axios from 'axios';
-const { REACT_APP_END_POINT } = process.env;
+import { POST } from './axios';
+// const { REACT_APP_END_POINT } = process.env;
 
 export const postSignin = async ({ email, password }) => {
-  const response = await axios.post(`${REACT_APP_END_POINT}/user/login`, {
-    email,
-    password,
+  const response = await POST({
+    url: '/user/login',
+    data: {
+      email,
+      password,
+    },
   });
   return response;
 };
@@ -15,7 +19,7 @@ export const postSignup = async ({
   nickname,
   password,
 }) => {
-  const response = await axios.post(`${REACT_APP_END_POINT}/user/join`, {
+  const response = await axios.post('/user/join', {
     email,
     password,
     confirmPassword,

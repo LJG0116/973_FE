@@ -3,7 +3,7 @@ import { useHistory } from 'react-router';
 import { SignupForm } from '@components/Form';
 import { useForm } from '@hooks';
 import { validationPassword } from '@utils/validation';
-import { postSignup } from '@components/apis/auth';
+import { postSignup } from '@apis/auth';
 
 const SignupFormContainer = (props) => {
   const {

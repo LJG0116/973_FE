@@ -1,9 +1,9 @@
 import React from 'react';
 import { useHistory } from 'react-router-dom';
 import { SigninForm } from '@components/Form';
-import { useForm, useSessionStorage } from '@hooks';
+import { useForm } from '@hooks';
 import { validationEmail } from '@utils/validation';
-import { postSignin } from '@components/apis/auth';
+import { postSignin } from '@apis/auth';
 
 const SigninFormContainer = (props) => {
   const { values, errors, handleChange, handleSubmit } = useForm({
@@ -11,11 +11,10 @@ const SigninFormContainer = (props) => {
       email: '',
       password: '',
     },
-    onSubmit: ({ email, password }) => {
-      const response = postSignin({ email, password });
-      console.log(response);
+    onSubmit: async ({ email, password }) => {
+      const response = await postSignin({ email, password });
 
-      setValue(response.accessToken);
+      // setValue(response.data.accessToken);
       history.push('/');
     },
     validate: ({ email, password }) => {
@@ -27,7 +26,6 @@ const SigninFormContainer = (props) => {
       return newErrors;
     },
   });
-  const [setValue] = useSessionStorage('authorization', '');
   const history = useHistory();
 
   return (

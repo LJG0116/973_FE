@@ -14,7 +14,6 @@ const SigninForm = (props) => {
     history,
     className: rootClassName,
   } = props;
-
   const className = cx(styles.root, rootClassName);
 
   return (
