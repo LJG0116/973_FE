@@ -47,7 +47,7 @@ const SignupForm = (props) => {
           className={styles.input__small}
           type="text"
           value={values.nickname}
-          name="email"
+          name="nickname"
           placeholder="닉네임을 입력하세요."
           onChange={onChange}
         />
@@ -74,8 +74,8 @@ const SignupForm = (props) => {
       <input
         className={styles.input__large}
         type="password"
-        value={values.passwordCheck}
-        name="passwordCheck"
+        value={values.confirmPassword}
+        name="confirmPassword"
         placeholder="비밀번호를 다시 한번 입력하세요."
         onChange={onChange}
       />

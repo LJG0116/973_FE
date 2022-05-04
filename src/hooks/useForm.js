@@ -86,9 +86,7 @@ const useForm = ({ initialValues, onSubmit, onClick, validate }) => {
     setValues({ ...values, [name]: [...values[name], value] });
   };
 
-  useEffect(() => {
-    console.log(values);
-  }, [values]);
+  useEffect(() => {}, [values]);
 
   return {
     values,
