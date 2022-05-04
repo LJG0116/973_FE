@@ -2,12 +2,14 @@ import React from 'react';
 import styles from './Topbar.module.scss';
 import classNames from 'classnames/bind';
 import { withRouter } from 'react-router-dom';
+import { useUsers } from '@contexts/UserProvider';
 
 const cx = classNames.bind(styles);
 
 const Topbar = (props) => {
   const { className: rootClassName, history } = props;
   const className = cx(styles.root, rootClassName);
+  const { user } = useUsers();
 
   return (
     <header className={className}>
@@ -43,10 +45,10 @@ const Topbar = (props) => {
         <button
           type="button"
           onClick={() => {
-            history.push('/my');
+            user ? history.push('/my') : history.push('/signin');
           }}
         >
-          로그인
+          {user ? '내정보' : '로그인'}
         </button>
         <button
           type="button"

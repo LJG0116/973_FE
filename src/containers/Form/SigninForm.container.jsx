@@ -4,6 +4,7 @@ import { SigninForm } from '@components/Form';
 import { useForm } from '@hooks';
 import { validationEmail } from '@utils/validation';
 import { postSignin } from '@apis/auth';
+import { useUsers } from '@contexts/UserProvider';
 
 const SigninFormContainer = (props) => {
   const { values, errors, handleChange, handleSubmit } = useForm({
@@ -14,7 +15,7 @@ const SigninFormContainer = (props) => {
     onSubmit: async ({ email, password }) => {
       const response = await postSignin({ email, password });
 
-      // setValue(response.data.accessToken);
+      addUser(response.data.accessToken);
       history.push('/');
     },
     validate: ({ email, password }) => {
@@ -26,6 +27,7 @@ const SigninFormContainer = (props) => {
       return newErrors;
     },
   });
+  const { addUser } = useUsers();
   const history = useHistory();
 
   return (
