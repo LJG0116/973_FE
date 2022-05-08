@@ -41,14 +41,13 @@ const Topbar = (props) => {
         </button>
       </div>
       <div className={styles.user}>
-        {/* 로그인? 마이페이지 : 로그인 */}
         <button
           type="button"
           onClick={() => {
             user ? history.push('/my') : history.push('/signin');
           }}
         >
-          {user ? '내정보' : '로그인'}
+          {user ? '마이페이지' : '로그인'}
         </button>
         <button
           type="button"

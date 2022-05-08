@@ -4,7 +4,8 @@ const UserContext = createContext();
 export const useUsers = () => useContext(UserContext);
 
 const UserProvider = ({ children }) => {
-  const [user, setUser] = useState('');
+  const isAuthorized = sessionStorage.getItem('authorization');
+  const [user, setUser] = useState(isAuthorized);
 
   const addUser = (token) => {
     sessionStorage.setItem('authorization', token);
@@ -13,6 +14,7 @@ const UserProvider = ({ children }) => {
 
   const removeUser = (id) => {
     sessionStorage.removeItem('authorization');
+    setUser();
   };
 
   return (

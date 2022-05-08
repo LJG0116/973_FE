@@ -4,6 +4,8 @@
 .root {
   @include container__column();
   width: 100%;
+  box-shadow: none;
+  margin-bottom: 24px;
 }
 
 .profile__wrapper {

@@ -10,6 +10,8 @@ import {
   PostDetailPage,
 } from '@pages';
 import { Topbar } from '@components/Bar';
+import PrivateRoute from '@utils/privateRoute';
+import PublicRoute from '@utils/publicRoute';
 
 function App() {
   return (
@@ -17,16 +19,16 @@ function App() {
       <Topbar />
       <Switch>
         <Route path="/" exact component={HomePage} />
-        <Route path="/signup" exact component={SignupPage} />
-        <Route path="/signin" exact component={SigninPage} />
-        <Route path="/my" component={MyPage} />
+        <PublicRoute exact from="/signup" to="/my" component={SignupPage} />
+        <PublicRoute exact from="/signin" to="/my" component={SigninPage} />
+        <PrivateRoute exact from="/my" component={MyPage} />
         <Route path="/player" exact component={HomePage} />
         <Route path="/coach" exact component={HomePage} />
         <Route path="/club" exact component={HomePage} />
-        <Route path="/write/player" exact component={PostWritePage} />
-        <Route path="/write/coach" exact component={PostWritePage} />
+        <PrivateRoute exact from="/write/player" component={PostWritePage} />
+        <PrivateRoute exact from="/write/coach" component={PostWritePage} />
         <Route path="/view" exact component={PostDetailPage} />
-        <Route path="/edit/:id" exact component={HomePage} />
+        <PrivateRoute exact from="/edit/:id" component={HomePage} />
       </Switch>
     </UserProvider>
   );

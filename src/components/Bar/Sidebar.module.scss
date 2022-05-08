@@ -5,11 +5,13 @@
   @include container__column();
   justify-content: flex-start;
   align-items: flex-start;
+  position: relative;
   width: 256px;
   background-color: $primary;
   flex-shrink: 0;
   margin-right: $main__margin__size;
   padding: 16px 0;
+  margin-bottom: 24px;
 }
 
 .list {
@@ -24,5 +26,10 @@
     background-color: $main__white;
     color: $primary;
     transition: color 500ms ease-in-out, background-color 500ms ease-in-out;
+  }
+
+  &.last__child {
+    position: absolute;
+    bottom: 16px;
   }
 }

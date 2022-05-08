@@ -36,7 +36,7 @@ const MyInfoEditForm = (props) => {
             className={styles.profile__image}
             src={
               values.srcUrl ||
-              'https://user-images.githubusercontent.com/69751205/165550742-f15e262d-8f90-4096-9dfa-30801c211827.png'
+              'https://user-images.githubusercontent.com/69751205/167300027-24e32d1c-984e-4f2d-b7d1-2cef9054a81e.png'
             }
             alt=""
           />
