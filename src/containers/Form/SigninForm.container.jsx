@@ -15,6 +15,7 @@ const SigninFormContainer = (props) => {
     onSubmit: async ({ email, password }) => {
       const response = await postSignin({ email, password });
 
+      if (!response) return;
       addUser(response.data.accessToken);
       history.push('/');
     },

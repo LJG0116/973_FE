@@ -17,13 +17,9 @@ export const GET = async ({ url, params = {}, data = {} }) => {
       data,
     });
 
-    // if (response.status >= 400) {
-    //   throw new Error('API 호출에 실패 했습니다.');
-    // }
-
     return response.data;
   } catch (error) {
-    console.error(error);
+    alert(error.response.data.message);
   }
 };
 
@@ -36,13 +32,9 @@ export const POST = async ({ url, params = {}, data = {} }) => {
       data,
     });
 
-    if (response.status >= 400) {
-      throw new Error('API 호출에 실패 했습니다.');
-    }
-
     return response.data;
   } catch (error) {
-    return error;
+    alert(error.response.data.message);
   }
 };
 
@@ -55,13 +47,9 @@ export const PUT = async ({ url, params = {}, data = {} }) => {
       data,
     });
 
-    if (response.status >= 400) {
-      throw new Error('API 호출에 실패 했습니다.');
-    }
-
     return response.data;
   } catch (error) {
-    return error;
+    alert(error.response.data.message);
   }
 };
 
@@ -74,13 +62,9 @@ export const DELETE = async ({ url, params = {}, data = {} }) => {
       data,
     });
 
-    if (response.status >= 400) {
-      throw new Error('API 호출에 실패 했습니다.');
-    }
-
     return response.data;
   } catch (error) {
-    return error;
+    alert(error.response.data.message);
   }
 };
 
