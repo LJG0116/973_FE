@@ -1,0 +1,16 @@
+@import '@styles/mixins';
+
+.root {
+  @include container__row();
+  width: 80%;
+}
+
+.input__search {
+  @include input__large();
+  margin-right: 8px;
+}
+
+.button__search {
+  @include button_small();
+  width: 80px;
+}

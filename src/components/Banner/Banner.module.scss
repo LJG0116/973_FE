@@ -2,13 +2,12 @@
 @import '@styles/mixins';
 
 .root {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-
-  height: 520px;
+  @include container__column();
+  width: 80%;
+  height: 420px;
   background-color: $primary;
   padding-right: 48px;
+  margin-bottom: $main__padding__size;
 }
 
 .banner__title {
@@ -16,10 +15,6 @@
   font-weight: 700;
   color: #ffffff;
   font-style: italic;
-
-  // background: linear-gradient(45deg, #000080, $point);
-  // color: transparent;
-  // -webkit-background-clip: text;
 }
 
 .banner__image {
