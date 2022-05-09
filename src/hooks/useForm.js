@@ -1,7 +1,8 @@
 import { useState, useEffect } from 'react';
+import { getCheckEmail, getCheckNickname } from '@apis/auth';
 import { validationEmail } from '@utils/validation';
 
-const useForm = ({ initialValues, onSubmit, onClick, validate }) => {
+const useForm = ({ initialValues, onSubmit, validate }) => {
   const [values, setValues] = useState(initialValues);
   const [errors, setErrors] = useState({});
   const [isLoading, setIsLoading] = useState(false);
@@ -26,8 +27,14 @@ const useForm = ({ initialValues, onSubmit, onClick, validate }) => {
       newErrors.email = '잘못된 이메일 형식입니다.';
 
     if (!newErrors || Object.keys(newErrors).length === 0) {
-      await onClick(values);
+      const response = await getCheckEmail({ userId: email });
       setErrors({ newErrors });
+      console.log(response);
+
+      setValues({
+        ...values,
+        isCheckedEmail: true,
+      });
     } else setErrors(newErrors);
     setIsLoading(false);
   };
@@ -38,12 +45,18 @@ const useForm = ({ initialValues, onSubmit, onClick, validate }) => {
     e.preventDefault();
 
     const newErrors = {};
-    const { email } = values;
-    if (!email) newErrors.email = '닉네임을 입력해주세요.';
+    const { nickname } = values;
+    if (!nickname) newErrors.nickname = '닉네임을 입력해주세요.';
 
     if (!newErrors || Object.keys(newErrors).length === 0) {
-      await onClick(values);
+      const response = await getCheckNickname({ nickname });
       setErrors({ newErrors });
+      console.log(response);
+
+      setValues({
+        ...values,
+        isCheckedNickname: true,
+      });
     } else setErrors(newErrors);
     setIsLoading(false);
   };
@@ -79,7 +92,6 @@ const useForm = ({ initialValues, onSubmit, onClick, validate }) => {
     };
   };
 
-  // 위치 모달에서 "확인" 눌렀을 때 호출
   const handleLocationClick = (e) => {
     const name = e.currentTarget.getAttribute('name');
     const value = e.currentTarget.getAttribute('value');

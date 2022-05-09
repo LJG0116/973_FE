@@ -2,7 +2,7 @@ import React from 'react';
 import { useHistory } from 'react-router';
 import { SignupForm } from '@components/Form';
 import { useForm } from '@hooks';
-import { validationPassword } from '@utils/validation';
+import { validationPassword, validationEmail } from '@utils/validation';
 import { postSignup } from '@apis/auth';
 
 const SignupFormContainer = (props) => {
@@ -18,9 +18,8 @@ const SignupFormContainer = (props) => {
       email: '',
       password: '',
       nickname: '',
-    },
-    onClick: (e) => {
-      console.log(e);
+      isCheckedEmail: false,
+      isCheckedNickname: false,
     },
     onSubmit: ({ email, confirmPassword, nickname, password }) => {
       postSignup({
@@ -34,8 +33,8 @@ const SignupFormContainer = (props) => {
     validate: ({ email, nickname, password, confirmPassword }) => {
       const newErrors = {};
       if (!email) newErrors.email = '이메일을 입력해주세요.';
-      // else if (!validationEmail(email))
-      //   newErrors.email = '잘못된 이메일 형식입니다.';
+      else if (!validationEmail(email))
+        newErrors.email = '잘못된 이메일 형식입니다.';
       if (!password) newErrors.password = '비밀번호를 입력해주세요.';
       else if (!validationPassword(password))
         newErrors.password =

@@ -1,6 +1,25 @@
 import axios from 'axios';
-import { POST } from './axios';
-// const { REACT_APP_END_POINT } = process.env;
+import { GET, POST } from './axios';
+
+export const getCheckEmail = async ({ userId }) => {
+  const response = await GET({
+    url: '/user/email',
+    data: {
+      userId,
+    },
+  });
+  return response;
+};
+
+export const getCheckNickname = async ({ nickname }) => {
+  const response = await GET({
+    url: '/user/email',
+    data: {
+      nickname,
+    },
+  });
+  return response;
+};
 
 export const postSignin = async ({ email, password }) => {
   const response = await POST({

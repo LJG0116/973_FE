@@ -32,7 +32,10 @@ const SignupForm = (props) => {
           onChange={onChange}
         />
         <button
-          className={styles.button__small}
+          className={cx(
+            styles.button__small,
+            values.isCheckedEmail && styles.isChecked
+          )}
           type="button"
           onClick={onEmailClick}
         >
@@ -52,7 +55,10 @@ const SignupForm = (props) => {
           onChange={onChange}
         />
         <button
-          className={styles.button__small}
+          className={cx(
+            styles.button__small,
+            values.isCheckedNickname && styles.isChecked
+          )}
           type="button"
           onClick={onNicknameClick}
         >
@@ -60,7 +66,7 @@ const SignupForm = (props) => {
         </button>
       </div>
       <div className={styles.error}>
-        {errors.emailCheck || errors.email}&nbsp;
+        {errors.nicknameCheck || errors.nickname}&nbsp;
       </div>
       <input
         className={styles.input__large}
