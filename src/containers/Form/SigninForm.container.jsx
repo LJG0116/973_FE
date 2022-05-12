@@ -16,7 +16,8 @@ const SigninFormContainer = (props) => {
       const response = await postSignin({ email, password });
 
       if (!response) return;
-      addUser(response.data.accessToken);
+      addUser(response.data);
+
       history.push('/');
     },
     validate: ({ email, password }) => {

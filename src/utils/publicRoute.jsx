@@ -8,7 +8,7 @@ const PublicRoute = ({ component: Component, from, to, ...props }) => {
     <Route
       {...props}
       render={(props) =>
-        user || sessionStorage.getItem('authorization') ? (
+        user.isAuthorized || sessionStorage.getItem('authorization') ? (
           <Redirect
             to={{
               pathname: to,
