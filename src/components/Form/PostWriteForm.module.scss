@@ -30,4 +30,22 @@
 
 .modal {
   @include modal();
+  display: flex;
+
+  & p {
+    margin-right: 8px;
+    flex-shrink: 0;
+  }
+}
+
+.badge {
+  display: inline-block;
+  border: 1px $primary solid;
+  border-radius: 48px;
+  padding: 4px;
+  margin: 2px;
+  color: $primary;
+  font-size: 12px;
+  cursor: pointer;
+  letter-spacing: -1px;
 }

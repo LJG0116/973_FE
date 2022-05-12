@@ -11,11 +11,11 @@ const PostWriteForm = (props) => {
     values = {},
     onChange = () => console.log('onChange'),
     onSubmit = () => console.log('onSubmit'),
-    onLocationClick = () => console.log('onLocationClick'),
+    onListClick = () => console.log('onListClick'),
     className: rootClassName,
   } = props;
-  const [isLocationOpen, setIsLocationOpen] = useState(true);
-  const [isSportOpen, setIsSportOpen] = useState(true);
+  const [isLocationOpen, setIsLocationOpen] = useState(false);
+  const [isSportOpen, setIsSportOpen] = useState(false);
   const className = cx(styles.root, rootClassName);
 
   const handleLocationClick = () => {
@@ -42,25 +42,36 @@ const PostWriteForm = (props) => {
       </div>
       {/* 위치 */}
       <div className={styles.modal} onClick={handleLocationClick}>
-        지역 선택하기 &gt;
+        <p>지역 선택하기 &gt;</p>
+        <div className={styles.span__wrapper}>
+          {values.location.map((element) => (
+            <span className={styles.badge} key={element}>
+              {element}
+            </span>
+          ))}
+        </div>
       </div>
       {isLocationOpen ? (
         <LocationModal
           onClick={handleLocationClick}
-          onLocationClick={onLocationClick}
+          onListClick={onListClick}
         />
       ) : (
         ''
       )}
       {/* 종목 */}
       <div className={styles.modal} onClick={handleSportClick}>
-        종목 선택하기 &gt;
+        <p>종목 선택하기 &gt;</p>
+        <div className={styles.span__wrapper}>
+          {values.sport.map((element) => (
+            <span className={styles.badge} key={element}>
+              {element}
+            </span>
+          ))}
+        </div>
       </div>
       {isSportOpen ? (
-        <SportModal
-          onClick={handleSportClick}
-          onLocationClick={onLocationClick}
-        />
+        <SportModal onClick={handleSportClick} onListClick={onListClick} />
       ) : (
         ''
       )}

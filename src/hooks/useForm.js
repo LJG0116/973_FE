@@ -80,13 +80,10 @@ const useForm = ({ initialValues, onSubmit, onClick, validate }) => {
   };
 
   // 위치 모달에서 "확인" 눌렀을 때 호출
-  const handleLocationClick = (e) => {
-    const name = e.currentTarget.getAttribute('name');
-    const value = e.currentTarget.getAttribute('value');
-    setValues({ ...values, [name]: [...values[name], value] });
+  const handleListClick = ({ name, value }) => {
+    console.log(values);
+    setValues({ ...values, [name]: value });
   };
-
-  useEffect(() => {}, [values]);
 
   return {
     values,
@@ -98,7 +95,7 @@ const useForm = ({ initialValues, onSubmit, onClick, validate }) => {
     handleNicknameClick,
     handleSubmit,
     handleImageUpload,
-    handleLocationClick,
+    handleListClick,
   };
 };
 export default useForm;

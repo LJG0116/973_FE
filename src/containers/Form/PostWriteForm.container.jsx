@@ -9,7 +9,7 @@ const PostWriteFormContainer = () => {
     handleChange,
     handleSubmit,
     handleImageUpload,
-    handleLocationClick,
+    handleListClick,
   } = useForm({
     initialValues: {
       postImages: [],
@@ -41,7 +41,7 @@ const PostWriteFormContainer = () => {
       onChange={handleChange}
       onSubmit={handleSubmit}
       onUpload={handleImageUpload}
-      onLocationClick={handleLocationClick}
+      onListClick={handleListClick}
     />
   );
 };

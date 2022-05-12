@@ -6,8 +6,11 @@ const cx = classNames.bind(styles);
 const sports = require('./sport.json');
 
 const SportModal = (props) => {
-  const { onClick = () => console.log('onClick'), className: rootClassName } =
-    props;
+  const {
+    onClick = () => console.log('onClick'),
+    onListClick = () => console.log('onListClick'),
+    className: rootClassName,
+  } = props;
   const [selectedSport, setSelectedSport] = useState([]);
 
   const className = cx(styles.root, rootClassName);
@@ -59,7 +62,18 @@ const SportModal = (props) => {
           ))}
         </div>
         <div className={styles.button__wrapper}>
-          <button className={styles.button}>확인</button>
+          <button
+            className={styles.button}
+            onClick={() => {
+              onListClick({
+                name: 'sport',
+                value: selectedSport,
+              });
+              onClick();
+            }}
+          >
+            확인
+          </button>
           <button className={styles.button} onClick={onClick}>
             취소
           </button>

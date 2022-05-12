@@ -6,8 +6,11 @@ const cx = classNames.bind(styles);
 const location = require('./location.json');
 
 const LocationModal = (props) => {
-  const { onClick = () => console.log('onClick'), className: rootClassName } =
-    props;
+  const {
+    onClick = () => console.log('onClick'),
+    onListClick = () => console.log('onListClick'),
+    className: rootClassName,
+  } = props;
   const [seletedMainLocation, setSeletedMainLocation] = useState({
     mainRegion: '',
     subRegion: [],
@@ -43,7 +46,6 @@ const LocationModal = (props) => {
 
   const handleSubRegionClick = (e) => {
     const value = e.currentTarget.getAttribute('value');
-    console.log(value);
     const filteredLocation = selectedSubLocation.filter(
       (element) => element === value
     );
@@ -106,7 +108,18 @@ const LocationModal = (props) => {
           ))}
         </div>
         <div className={styles.button__wrapper}>
-          <button className={styles.button}>확인</button>
+          <button
+            className={styles.button}
+            onClick={() => {
+              onListClick({
+                name: 'location',
+                value: selectedSubLocation,
+              });
+              onClick();
+            }}
+          >
+            확인
+          </button>
           <button className={styles.button} onClick={onClick}>
             취소
           </button>
