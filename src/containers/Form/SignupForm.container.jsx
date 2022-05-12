@@ -29,6 +29,7 @@ const SignupFormContainer = (props) => {
         nickname,
         password,
       });
+      alert('회원가입을 축하합니다!');
       history.push('/');
     },
     validate: ({ email, nickname, password, confirmPassword }) => {
