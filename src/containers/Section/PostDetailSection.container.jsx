@@ -1,20 +1,42 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useMemo, useCallback } from 'react';
 import { PostDetailSection } from '@components/Section';
+import { useUsers } from '@contexts/UserProvider';
+import { useParams, useHistory } from 'react-router-dom';
+import { getPost, deletePost } from '@apis/post';
 
 const initialState = {
   title: '',
   location: [],
   sport: [],
   text: '',
-  isMine: 0,
+  userId: '',
 };
 
 const PostDetailSectionContainer = () => {
-  const [values] = useState(initialState);
+  const { id } = useParams();
+  const [values, setValues] = useState(initialState);
+  const { user } = useUsers();
+  const history = useHistory();
+  const isMine = useMemo(
+    () => user.userId === values.userId,
+    [user.userId, values.userId]
+  );
+
+  const init = useCallback(async () => await getPost({ id }), [id]);
+
+  const handleDeleteClick = async () => {
+    const response = await deletePost({ id });
+    if (response) history.goBack();
+  };
+
+  const handleUpdateClick = async () => {
+    history.push(`/edit/${id}`);
+  };
 
   useEffect(() => {
-    // get 게시글 정보 조회 API 호출
-  }, [values]);
+    const response = init();
+    setValues(response);
+  }, [init]);
 
   return (
     <PostDetailSection
@@ -22,7 +44,9 @@ const PostDetailSectionContainer = () => {
       location={values.location}
       sport={values.sport}
       text={values.text}
-      isMine={values.isMine}
+      isMine={isMine}
+      onDeleteClick={handleDeleteClick}
+      onUpdateClick={handleUpdateClick}
     />
   );
 };

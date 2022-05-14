@@ -67,9 +67,3 @@ export const DELETE = async ({ url, params = {}, data = {} }) => {
     alert(error.response.data.message);
   }
 };
-
-//   const headers = {
-//     ...(isJsonType && { 'Content-Type': 'application/json;charset=utf-8' }),
-//     Authorization: isAuth
-//       ? `Bearer ${instance.defaults.headers.common.Authorization}`
-//       : '',

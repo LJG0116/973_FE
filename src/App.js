@@ -27,7 +27,7 @@ function App() {
         <Route path="/club" exact component={HomePage} />
         <PrivateRoute exact from="/write/player" component={PostWritePage} />
         <PrivateRoute exact from="/write/coach" component={PostWritePage} />
-        <Route path="/view" exact component={PostDetailPage} />
+        <Route path="/view/:id" exact component={PostDetailPage} />
         <PrivateRoute exact from="/edit/:id" component={HomePage} />
       </Switch>
     </UserProvider>
