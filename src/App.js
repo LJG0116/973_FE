@@ -8,6 +8,7 @@ import {
   MyPage,
   PostWritePage,
   PostDetailPage,
+  PostEditPage,
 } from '@pages';
 import { Topbar } from '@components/Bar';
 import PrivateRoute from '@utils/privateRoute';
@@ -28,7 +29,7 @@ function App() {
         <PrivateRoute exact from="/write/player" component={PostWritePage} />
         <PrivateRoute exact from="/write/coach" component={PostWritePage} />
         <Route path="/view/:id" exact component={PostDetailPage} />
-        <PrivateRoute exact from="/edit/:id" component={HomePage} />
+        <PrivateRoute exact from="/edit/:id" component={PostEditPage} />
       </Switch>
     </UserProvider>
   );

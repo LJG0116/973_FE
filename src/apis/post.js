@@ -28,7 +28,7 @@ export const getPost = async ({ id }) => {
   return response;
 };
 
-export const postPostUpdate = async ({
+export const postUpdatePost = async ({
   location,
   sport,
   text,

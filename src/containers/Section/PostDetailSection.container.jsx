@@ -40,10 +40,7 @@ const PostDetailSectionContainer = () => {
 
   return (
     <PostDetailSection
-      title={values.title}
-      location={values.location}
-      sport={values.sport}
-      text={values.text}
+      values={values}
       isMine={isMine}
       onDeleteClick={handleDeleteClick}
       onUpdateClick={handleUpdateClick}

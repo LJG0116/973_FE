@@ -8,6 +8,7 @@ const cx = classNames.bind(styles);
 const PostDetailSection = (props) => {
   const {
     values = {},
+    isMine = false,
     onDeleteClick = () => console.log('onDeleteClick'),
     onUpdateClick = () => console.log('onUpdateClick'),
     className: rootClassName,
@@ -47,22 +48,24 @@ const PostDetailSection = (props) => {
       </div>
       {/* 본문 */}
       <div className={styles.post__textarea}>{values.text || '텍스트'}</div>
-      <div className={styles.button__wrapper}>
-        <button
-          className={styles.post__button}
-          type="button"
-          onClick={onUpdateClick}
-        >
-          수정
-        </button>
-        <button
-          className={styles.post__button}
-          type="button"
-          onClick={onDeleteClick}
-        >
-          삭제
-        </button>
-      </div>
+      {isMine && (
+        <div className={styles.button__wrapper}>
+          <button
+            className={styles.post__button}
+            type="button"
+            onClick={onUpdateClick}
+          >
+            수정
+          </button>
+          <button
+            className={styles.post__button}
+            type="button"
+            onClick={onDeleteClick}
+          >
+            삭제
+          </button>
+        </div>
+      )}
     </div>
   );
 };
