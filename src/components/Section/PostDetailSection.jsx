@@ -15,18 +15,25 @@ const PostDetailSection = (props) => {
   } = props;
   const className = cx(styles.root, rootClassName);
 
+  console.log(isMine);
+
   return (
     <div className={className}>
       <h1 className={styles.title}>게시글 조회</h1>
       <div className={styles.wrapper}>
         {/* 제목 */}
-        <h1 className={styles.post__title}>{values.title || '제목'}</h1>
+        <div className={styles.post__title__wrapper}>
+          <h1 className={styles.post__title}>{values.title || '제목'}</h1>
+          <span className={styles.post__badge}>
+            {values.type === 'player' ? '플레이어' : '코치'}
+          </span>
+        </div>
         <div className={styles.detail__wrapper}>
           <span className={styles.post__author}>
             {values.author || '김빡빡'}
           </span>
           <span className={styles.post__date}>
-            {values.date || '0000-00-00'}
+            {values.date?.replace(/T/g, ' ') || '0000-00-00'}
           </span>
         </div>
       </div>

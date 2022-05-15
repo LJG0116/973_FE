@@ -1,6 +1,7 @@
 import React from 'react';
 import { PostWriteForm } from '@components/Form';
 import { useForm } from '@hooks';
+import { useHistory } from 'react-router-dom';
 import { useUsers } from '@contexts/UserProvider';
 import { postWritePost } from '@apis/post';
 
@@ -25,15 +26,15 @@ const PostWriteFormContainer = () => {
     },
     onSubmit: async ({ location, sport, text, title }) => {
       const response = await postWritePost({
-        location,
-        sport: sport[0],
+        location: location.join('#'),
+        sport: sport.join('#'),
         text,
         title,
-        userId: user.userId,
+        author: user.nickname,
       });
 
       if (!response) return;
-      console.log(response);
+      history.push(`/view/${response.data.postId}`);
     },
     validate: ({ title, sport, location, text }) => {
       const newErrors = {};
@@ -44,6 +45,7 @@ const PostWriteFormContainer = () => {
       return newErrors;
     },
   });
+  const history = useHistory();
   const { user } = useUsers();
 
   return (

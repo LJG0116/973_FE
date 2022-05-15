@@ -1,5 +1,5 @@
 import React, { useEffect, useCallback } from 'react';
-import { PostWriteForm } from '@components/Form';
+import { PostEditForm } from '@components/Form';
 import { useForm } from '@hooks';
 import { useParams, useHistory } from 'react-router-dom';
 import { getPost, postUpdatePost } from '@apis/post';
@@ -27,16 +27,16 @@ const PostEditFormContainer = () => {
     },
     onSubmit: async ({ location, sport, text, title }) => {
       const response = await postUpdatePost({
-        location,
-        sport: sport[0],
+        location: location.join('#'),
+        sport: sport.join('#'),
         text,
         title,
-        userId: user.userId,
+        postId: id,
+        nickname: user.nickname,
       });
 
       if (!response) return;
-      console.log(response);
-      // 변경한 게시글로 이동 예정
+      history.push(`/view/${id}`);
     },
     validate: ({ title, sport, location, text }) => {
       const newErrors = {};
@@ -51,15 +51,23 @@ const PostEditFormContainer = () => {
   const history = useHistory();
   const { user } = useUsers();
 
-  const init = useCallback(async () => await getPost({ id }), [id]);
+  const init = useCallback(async () => {
+    const { data } = await getPost({ id });
+    setValues({
+      location: data.area,
+      title: data.title,
+      sport: data.category,
+      text: data.text,
+      author: data.author,
+    });
+  }, [setValues, id]);
 
   useEffect(() => {
-    const response = init();
-    setValues(response);
-  }, [setValues, init]);
+    init();
+  }, [init]);
 
   return (
-    <PostWriteForm
+    <PostEditForm
       values={values}
       errors={errors}
       onChange={handleChange}

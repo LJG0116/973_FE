@@ -1,32 +1,44 @@
 import React from 'react';
 import styles from './PostPlayerSection.module.scss';
 import classNames from 'classnames/bind';
-import { withRouter } from 'react-router-dom';
+import { useHistory, withRouter } from 'react-router-dom';
 
 const cx = classNames.bind(styles);
 
-const initialState = [
-  { title: '1', author: '1', text: '1' },
-  { title: '2', author: '2', text: '2' },
-  { title: '3', author: '3', text: '3' },
-  { title: '4', author: '4', text: '4' },
-  { title: '5', author: '5', text: '5' },
-  { title: '6', author: '6', text: '6' },
-  { title: '7', author: '7', text: '7' },
-];
-
 const PostPlayerSection = (props) => {
   const { values = {}, className: rootClassName } = props;
+  const history = useHistory();
+
   const className = cx(styles.root, rootClassName);
 
   return (
     <div className={className}>
       <h1 className={styles.title}>플레이어</h1>
+      <button
+        className={styles.write__button}
+        type="button"
+        onClick={() => history.push('/write/player')}
+      >
+        게시글 작성
+      </button>
       <div className={styles.cards__wrapper}>
-        {initialState.length &&
-          initialState.map((element) => (
-            <div className={styles.card__wrapper} key={element.title}>
-              {element.title}
+        {values.length &&
+          values.map((element) => (
+            <div
+              className={styles.card__wrapper}
+              key={element.title}
+              onClick={() => {
+                history.push(`/view/${element.postId}`);
+              }}
+            >
+              <div className={styles.card__profile}>
+                <span className={styles.card__nickname}>{element.author}</span>
+                <span className={styles.card__date}>
+                  {element.date?.replace(/T/g, ' ')}
+                </span>
+              </div>
+              <h2>{element.title}</h2>
+              {/* <div>{element.text}</div> */}
             </div>
           ))}
       </div>

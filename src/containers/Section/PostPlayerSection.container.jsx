@@ -15,11 +15,13 @@ const initialState = [
 const PostPlayerSectionContainer = () => {
   const [values, setValues] = useState(initialState);
 
-  const init = useCallback(async () => await getPlayerPosts({}), []);
+  const init = useCallback(async () => {
+    const response = await getPlayerPosts({ page: 1 });
+    setValues(response.data);
+  }, []);
 
   useEffect(() => {
-    const response = init();
-    setValues(response);
+    init();
   }, [init]);
 
   return <PostPlayerSection values={values} />;

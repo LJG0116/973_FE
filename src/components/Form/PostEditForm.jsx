@@ -27,7 +27,7 @@ const PostEditForm = (props) => {
 
   return (
     <form className={className} onSubmit={onSubmit}>
-      <h1 className={styles.title}>게시글 쓰기</h1>
+      <h1 className={styles.title}>게시글 수정</h1>
       <div className={styles.wrapper}>
         {/* 제목 */}
         <input
@@ -43,7 +43,7 @@ const PostEditForm = (props) => {
       <div className={styles.modal} onClick={handleLocationClick}>
         <p>지역 선택하기 &gt;</p>
         <div className={styles.span__wrapper}>
-          {values.location.map((element) => (
+          {values.location?.map((element) => (
             <span className={styles.badge} key={element}>
               {element}
             </span>
@@ -78,10 +78,12 @@ const PostEditForm = (props) => {
       <textarea
         className={styles.post__textarea}
         name="text"
+        value={values.text}
+        placeholder={values.text}
         onChange={onChange}
       />
       <button className={styles.post_button_large} type="submit">
-        작성
+        수정
       </button>
     </form>
   );

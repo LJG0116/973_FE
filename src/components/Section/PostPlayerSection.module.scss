@@ -11,5 +11,31 @@
 }
 
 .cards__wrapper {
+  text-align: left;
   margin-bottom: $main__margin__size;
+}
+
+.write__button {
+  position: absolute;
+  top: 96px;
+  right: 48px;
+
+  &:hover {
+    color: $primary;
+  }
+}
+
+.card__wrapper {
+  padding: 12px;
+  border-bottom: #f5f5f5 solid;
+  cursor: pointer;
+}
+
+.card__nickname {
+  color: $primary;
+  margin-right: 8px;
+}
+
+.card__date {
+  color: $sub__gray;
 }

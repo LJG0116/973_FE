@@ -5,17 +5,16 @@ export const postWritePost = async ({
   sport,
   text,
   title,
-  userId,
+  author,
 }) => {
   const response = await POST({
     url: '/post/player',
     data: {
       area: location,
-      author: userId,
+      author,
       category: sport,
       text,
       title,
-      userId,
     },
   });
   return response;
@@ -23,7 +22,7 @@ export const postWritePost = async ({
 
 export const getPlayerPosts = async ({ page }) => {
   const response = await GET({
-    url: '/post/player/',
+    url: `/post/player/${page}`,
   });
   return response;
 };
@@ -47,17 +46,18 @@ export const postUpdatePost = async ({
   sport,
   text,
   title,
-  userId,
+  nickname,
+  postId,
 }) => {
   const response = await PUT({
     url: '/post',
     data: {
       area: location,
-      author: userId,
+      author: nickname,
       category: sport,
+      postId,
       text,
       title,
-      userId,
     },
   });
   return response;

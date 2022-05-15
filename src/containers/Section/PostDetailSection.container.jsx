@@ -10,6 +10,7 @@ const initialState = {
   sport: [],
   text: '',
   userId: '',
+  type: '',
 };
 
 const PostDetailSectionContainer = () => {
@@ -18,15 +19,22 @@ const PostDetailSectionContainer = () => {
   const { user } = useUsers();
   const history = useHistory();
   const isMine = useMemo(
-    () => user.userId === values.userId,
-    [user.userId, values.userId]
+    () => user.nickname === values.author,
+    [user.nickname, values.author]
   );
 
-  const init = useCallback(async () => await getPost({ id }), [id]);
+  const init = useCallback(async () => {
+    const response = await getPost({ id });
+
+    setValues(response.data);
+    return response;
+  }, [id]);
 
   const handleDeleteClick = async () => {
     const response = await deletePost({ id });
-    if (response) history.goBack();
+
+    if (response) alert('삭제가 완료되었습니다!');
+    values.type === 'player' ? history.push('/player') : history.push('/coach');
   };
 
   const handleUpdateClick = async () => {
@@ -34,8 +42,7 @@ const PostDetailSectionContainer = () => {
   };
 
   useEffect(() => {
-    const response = init();
-    setValues(response);
+    init();
   }, [init]);
 
   return (
