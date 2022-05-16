@@ -26,7 +26,7 @@ const SignupForm = (props) => {
         <input
           className={styles.input__small}
           type="text"
-          value={values.email}
+          value={values.email || ''}
           name="email"
           placeholder="이메일을 입력하세요."
           onChange={onChange}
@@ -39,14 +39,12 @@ const SignupForm = (props) => {
           확인
         </button>
       </div>
-      <div className={styles.error}>
-        {errors.emailCheck || errors.email}&nbsp;
-      </div>
+      <div className={styles.error}>{errors.email}&nbsp;</div>
       <div className={styles.wrapper}>
         <input
           className={styles.input__small}
           type="text"
-          value={values.nickname}
+          value={values.nickname || ''}
           name="nickname"
           placeholder="닉네임을 입력하세요."
           onChange={onChange}
@@ -59,13 +57,11 @@ const SignupForm = (props) => {
           확인
         </button>
       </div>
-      <div className={styles.error}>
-        {errors.emailCheck || errors.email}&nbsp;
-      </div>
+      <div className={styles.error}>{errors.nickname}&nbsp;</div>
       <input
         className={styles.input__large}
         type="password"
-        value={values.password}
+        value={values.password || ''}
         name="password"
         placeholder="비밀번호를 입력하세요."
         onChange={onChange}
@@ -74,7 +70,7 @@ const SignupForm = (props) => {
       <input
         className={styles.input__large}
         type="password"
-        value={values.confirmPassword}
+        value={values.confirmPassword || ''}
         name="confirmPassword"
         placeholder="비밀번호를 다시 한번 입력하세요."
         onChange={onChange}

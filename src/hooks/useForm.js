@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { validationEmail } from '@utils/validation';
+import { getCheckEmail, getCheckNickname } from '@apis/auth';
 
 const useForm = ({ initialValues, onSubmit, onClick, validate }) => {
   const [values, setValues] = useState(initialValues);
@@ -17,34 +18,54 @@ const useForm = ({ initialValues, onSubmit, onClick, validate }) => {
   // signup 이메일 중복확인 click event hook
   const handleEmailClick = async (e) => {
     setIsLoading(true);
-    e.preventDefault();
 
-    const newErrors = {};
+    e.preventDefault();
     const { email } = values;
-    if (!email) newErrors.email = '이메일을 입력해주세요.';
-    else if (!validationEmail(email))
-      newErrors.email = '잘못된 이메일 형식입니다.';
+    const newErrors = {};
+
+    if (!email) {
+      newErrors.email = '이메일을 입력해주세요.';
+    }
 
     if (!newErrors || Object.keys(newErrors).length === 0) {
-      await onClick(values);
-      setErrors({ newErrors });
+      const response = await getCheckEmail({ email });
+      if (response) {
+        setValues({
+          ...values,
+          emailCheck: true,
+        });
+        setErrors({ ...errors, ...newErrors });
+        alert('이메일 확인이 완료되었습니다.');
+      }
     } else setErrors(newErrors);
+
     setIsLoading(false);
   };
 
   // signup 닉네임 중복확인 click event hook
   const handleNicknameClick = async (e) => {
     setIsLoading(true);
-    e.preventDefault();
 
+    e.preventDefault();
+    const { nickname } = values;
     const newErrors = {};
-    const { email } = values;
-    if (!email) newErrors.email = '닉네임을 입력해주세요.';
+
+    if (!nickname) {
+      newErrors.nickname = '닉네임을 입력해주세요.';
+    }
 
     if (!newErrors || Object.keys(newErrors).length === 0) {
-      await onClick(values);
-      setErrors({ newErrors });
+      const response = await getCheckNickname({ nickname });
+      if (response) {
+        setValues({
+          ...values,
+          nicknameCheck: true,
+        });
+        alert('닉네임 확인이 완료되었습니다.');
+        setErrors({ ...errors, ...newErrors });
+      }
     } else setErrors(newErrors);
+
     setIsLoading(false);
   };
 
@@ -81,7 +102,6 @@ const useForm = ({ initialValues, onSubmit, onClick, validate }) => {
 
   // 위치 모달에서 "확인" 눌렀을 때 호출
   const handleListClick = ({ name, value }) => {
-    console.log(values);
     setValues({ ...values, [name]: value });
   };
 

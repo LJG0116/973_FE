@@ -6,10 +6,12 @@ const cx = classNames.bind(styles);
 
 const MyInfoEditForm = (props) => {
   const {
-    values,
-    onChange,
-    onSubmit,
-    onUpload,
+    values = {},
+    onChange = () => console.log('onChange'),
+    onSubmit = () => console.log('onSubmit'),
+    onUpload = () => console.log('onUpload'),
+    onClick = () => console.log('onClick'),
+    onEmailClick = () => console.log('onEmailClick'),
     className: rootClassName,
   } = props;
   const inputRef = useRef();
@@ -23,6 +25,9 @@ const MyInfoEditForm = (props) => {
   return (
     <form className={className} onSubmit={onSubmit}>
       <h1 className={styles.title}>내 정보 수정</h1>
+      <button className={styles.signup} type="button" onClick={onClick}>
+        로그아웃
+      </button>
       <div className={styles.profile__wrapper}>
         <div className={styles.profile__upload} onClick={handleClick}>
           <input
@@ -43,16 +48,32 @@ const MyInfoEditForm = (props) => {
         </div>
         <div className={styles.profile__input__wrapper}>
           <input
-            className={styles.profile__input}
+            className={cx(styles.profile__input, styles.profile__email)}
             type="text"
-            name="nickname"
-            value={values.name}
-            placeholder="변경할 닉네임을 입력해주세요."
+            name="email"
+            value={values.email}
+            placeholder="이메일"
             onChange={onChange}
+            disabled
           />
-          <button className={styles.profile_button_small} type="button">
-            확인
-          </button>
+          <div className={styles.profile__nickname__wrapper}>
+            <input
+              className={styles.profile__input}
+              type="text"
+              name="nickname"
+              value={values.name}
+              placeholder="변경할 닉네임을 입력해주세요."
+              onChange={onChange}
+            />
+            <button
+              className={styles.profile_button_small}
+              type="button"
+              name="nickname"
+              onClick={onEmailClick}
+            >
+              확인
+            </button>
+          </div>
         </div>
       </div>
       <textarea

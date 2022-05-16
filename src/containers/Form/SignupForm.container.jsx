@@ -18,11 +18,24 @@ const SignupFormContainer = (props) => {
       email: '',
       password: '',
       nickname: '',
+      emailCheck: false,
+      nicknameCheck: false,
     },
     onClick: (e) => {
       console.log(e);
     },
-    onSubmit: ({ email, confirmPassword, nickname, password }) => {
+    onSubmit: ({
+      email,
+      confirmPassword,
+      nickname,
+      password,
+      emailCheck,
+      nicknameCheck,
+    }) => {
+      if (!emailCheck || !nicknameCheck) {
+        alert('이메일, 닉네임 확인을 해주세요.');
+        return;
+      }
       postSignup({
         email,
         confirmPassword,
@@ -35,8 +48,6 @@ const SignupFormContainer = (props) => {
     validate: ({ email, nickname, password, confirmPassword }) => {
       const newErrors = {};
       if (!email) newErrors.email = '이메일을 입력해주세요.';
-      // else if (!validationEmail(email))
-      //   newErrors.email = '잘못된 이메일 형식입니다.';
       if (!password) newErrors.password = '비밀번호를 입력해주세요.';
       else if (!validationPassword(password))
         newErrors.password =
