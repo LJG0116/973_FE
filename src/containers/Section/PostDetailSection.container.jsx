@@ -19,8 +19,8 @@ const PostDetailSectionContainer = () => {
   const { user } = useUsers();
   const history = useHistory();
   const isMine = useMemo(
-    () => user.nickname === values.author,
-    [user.nickname, values.author]
+    () => user.nickname === values.nickname,
+    [user.nickname, values.nickname]
   );
 
   const init = useCallback(async () => {

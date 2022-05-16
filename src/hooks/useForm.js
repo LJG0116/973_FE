@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react';
-import { validationEmail } from '@utils/validation';
 import { getCheckEmail, getCheckNickname } from '@apis/auth';
 
 const useForm = ({ initialValues, onSubmit, onClick, validate }) => {

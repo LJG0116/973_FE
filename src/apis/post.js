@@ -1,20 +1,22 @@
 import { DELETE, GET, POST, PUT } from './axios';
 
-export const postWritePost = async ({
+export const writePost = async ({
   location,
   sport,
   text,
   title,
-  author,
+  nickname,
+  userId,
 }) => {
   const response = await POST({
     url: '/post/player',
     data: {
-      area: location,
-      author,
-      category: sport,
+      area: location.join('#'),
+      nickname,
+      category: sport.join('#'),
       text,
       title,
+      userId,
     },
   });
   return response;
@@ -29,7 +31,7 @@ export const getPlayerPosts = async ({ page }) => {
 
 export const getCoachPosts = async ({ page }) => {
   const response = await GET({
-    url: '/post/coach/',
+    url: `/post/coach/${page}`,
   });
   return response;
 };
@@ -41,23 +43,25 @@ export const getPost = async ({ id }) => {
   return response;
 };
 
-export const postUpdatePost = async ({
+export const updatePost = async ({
   location,
   sport,
   text,
   title,
+  id,
   nickname,
-  postId,
+  userId,
 }) => {
   const response = await PUT({
     url: '/post',
     data: {
-      area: location,
-      author: nickname,
-      category: sport,
-      postId,
+      area: location.join('#'),
+      nickname,
+      category: sport.join('#'),
+      postId: id,
       text,
       title,
+      userId,
     },
   });
   return response;

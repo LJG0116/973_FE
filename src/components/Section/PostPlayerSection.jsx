@@ -32,7 +32,9 @@ const PostPlayerSection = (props) => {
               }}
             >
               <div className={styles.card__profile}>
-                <span className={styles.card__nickname}>{element.author}</span>
+                <span className={styles.card__nickname}>
+                  {element.nickname}
+                </span>
                 <span className={styles.card__date}>
                   {element.date?.replace(/T/g, ' ')}
                 </span>

@@ -3,7 +3,7 @@ import { PostWriteForm } from '@components/Form';
 import { useForm } from '@hooks';
 import { useHistory } from 'react-router-dom';
 import { useUsers } from '@contexts/UserProvider';
-import { postWritePost } from '@apis/post';
+import { writePost } from '@apis/post';
 
 const PostWriteFormContainer = () => {
   const {
@@ -25,12 +25,14 @@ const PostWriteFormContainer = () => {
       console.log(e);
     },
     onSubmit: async ({ location, sport, text, title }) => {
-      const response = await postWritePost({
-        location: location.join('#'),
-        sport: sport.join('#'),
+      const { nickname, userId } = user;
+      const response = await writePost({
+        location,
+        sport,
         text,
         title,
-        author: user.nickname,
+        nickname,
+        userId,
       });
 
       if (!response) return;

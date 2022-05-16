@@ -2,7 +2,7 @@ import React, { useEffect, useCallback } from 'react';
 import { PostEditForm } from '@components/Form';
 import { useForm } from '@hooks';
 import { useParams, useHistory } from 'react-router-dom';
-import { getPost, postUpdatePost } from '@apis/post';
+import { getPost, updatePost } from '@apis/post';
 import { useUsers } from '@contexts/UserProvider';
 
 const PostEditFormContainer = () => {
@@ -26,13 +26,15 @@ const PostEditFormContainer = () => {
       console.log(e);
     },
     onSubmit: async ({ location, sport, text, title }) => {
-      const response = await postUpdatePost({
-        location: location.join('#'),
-        sport: sport.join('#'),
+      const { nickname, userId } = user;
+      const response = await updatePost({
+        location,
+        sport,
         text,
         title,
-        postId: id,
-        nickname: user.nickname,
+        id,
+        nickname,
+        userId,
       });
 
       if (!response) return;
@@ -58,7 +60,7 @@ const PostEditFormContainer = () => {
       title: data.title,
       sport: data.category,
       text: data.text,
-      author: data.author,
+      nickname: data.nickname,
     });
   }, [setValues, id]);
 

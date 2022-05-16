@@ -30,7 +30,7 @@ const PostDetailSection = (props) => {
         </div>
         <div className={styles.detail__wrapper}>
           <span className={styles.post__author}>
-            {values.author || '김빡빡'}
+            {values.nickname || '김빡빡'}
           </span>
           <span className={styles.post__date}>
             {values.date?.replace(/T/g, ' ') || '0000-00-00'}
