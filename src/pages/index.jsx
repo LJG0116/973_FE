@@ -7,3 +7,4 @@ export { default as PostDetailPage } from './PostDetailPage';
 export { default as PostEditPage } from './PostEditPage';
 export { default as PostPlayerPage } from './PostPlayerPage';
 export { default as PostCoachPage } from './PostCoachPage';
+export { default as PostSearchPage } from './PostSearchPage';

@@ -1,4 +1,4 @@
-import { DELETE, GET, POST, PUT } from './axios';
+import { GET } from './axios';
 
 export const searchPost = async ({
   page = 1,
@@ -16,5 +16,5 @@ export const searchPost = async ({
       type,
     },
   });
-  console.log(response);
+  return response;
 };

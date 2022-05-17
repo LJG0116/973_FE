@@ -43,7 +43,11 @@ const InputSearch = (props) => {
         <div className={styles.modal} onClick={handleSportClick}>
           종목
         </div>
-        <button className={styles.button__search} type="submit" />
+        <button
+          className={styles.button__search}
+          type="submit"
+          onClick={() => {}}
+        />
       </div>
       <div className={styles.span__wrapper}>
         {values.location?.map((element) => (
