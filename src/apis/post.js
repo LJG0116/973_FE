@@ -7,18 +7,33 @@ export const writePost = async ({
   title,
   nickname,
   userId,
+  type,
 }) => {
-  const response = await POST({
-    url: '/post/player',
-    data: {
-      area: location.join('#'),
-      nickname,
-      category: sport.join('#'),
-      text,
-      title,
-      userId,
-    },
-  });
+  console.log(type);
+  const response =
+    type === 'player'
+      ? await POST({
+          url: '/post/player',
+          data: {
+            area: location.join('#'),
+            nickname,
+            category: sport.join('#'),
+            text,
+            title,
+            userId,
+          },
+        })
+      : await POST({
+          url: '/post/coach',
+          data: {
+            area: location.join('#'),
+            nickname,
+            category: sport.join('#'),
+            text,
+            title,
+            userId,
+          },
+        });
   return response;
 };
 

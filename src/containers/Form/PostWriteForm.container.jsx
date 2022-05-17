@@ -1,7 +1,7 @@
 import React from 'react';
 import { PostWriteForm } from '@components/Form';
 import { useForm } from '@hooks';
-import { useHistory } from 'react-router-dom';
+import { useHistory, useParams } from 'react-router-dom';
 import { useUsers } from '@contexts/UserProvider';
 import { writePost } from '@apis/post';
 
@@ -33,6 +33,7 @@ const PostWriteFormContainer = () => {
         title,
         nickname,
         userId,
+        type,
       });
 
       if (!response) return;
@@ -47,6 +48,8 @@ const PostWriteFormContainer = () => {
       return newErrors;
     },
   });
+  const { type } = useParams();
+  console.log(type);
   const history = useHistory();
   const { user } = useUsers();
 

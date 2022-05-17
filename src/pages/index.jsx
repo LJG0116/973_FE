@@ -6,3 +6,4 @@ export { default as PostWritePage } from './PostWritePage';
 export { default as PostDetailPage } from './PostDetailPage';
 export { default as PostEditPage } from './PostEditPage';
 export { default as PostPlayerPage } from './PostPlayerPage';
+export { default as PostCoachPage } from './PostCoachPage';
