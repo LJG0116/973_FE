@@ -3,6 +3,7 @@
 
 .root {
   @include container__column();
+  @include animation();
   width: 70%;
 }
 
