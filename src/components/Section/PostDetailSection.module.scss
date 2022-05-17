@@ -15,7 +15,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: $main__margin__size;
+  margin-bottom: 12px;
   & .post__author {
     color: $primary;
     margin-right: 8px;
@@ -78,4 +78,15 @@
     border-radius: 12px;
     color: $main__white;
   }
+}
+
+.badge__wrapper {
+  width: 100%;
+  &.last {
+    margin-bottom: 12px;
+  }
+}
+
+.badge {
+  @include badge();
 }

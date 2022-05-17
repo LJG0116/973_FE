@@ -15,8 +15,6 @@ const PostDetailSection = (props) => {
   } = props;
   const className = cx(styles.root, rootClassName);
 
-  console.log(isMine);
-
   return (
     <div className={className}>
       <h1 className={styles.title}>게시글 조회</h1>
@@ -46,7 +44,7 @@ const PostDetailSection = (props) => {
         ))}
       </div>
       {/* 종목 */}
-      <div className={styles.badge__wrapper}>
+      <div className={cx(styles.badge__wrapper, styles.last)}>
         {values.sport?.map((element) => (
           <span className={styles.badge} value={element} key={element}>
             {element}
