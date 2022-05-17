@@ -3,11 +3,12 @@
 
 .root {
   @include container__column();
+  @include animation();
   width: 80%;
   height: 420px;
   background-color: $primary;
-  padding-right: 48px;
-  margin-bottom: $main__padding__size;
+  padding-right: $main__size;
+  margin-bottom: $main__size;
 }
 
 .banner__title {

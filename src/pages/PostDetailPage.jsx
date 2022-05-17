@@ -1,12 +1,12 @@
 import React from 'react';
 import { PostDetailSectionContainer } from '@containers/Section';
-import { LayoutColumn } from '@components/Layout';
+import { LayoutColumnCenter } from '@components/Layout';
 
 const PostDetailPage = () => {
   return (
-    <LayoutColumn>
+    <LayoutColumnCenter>
       <PostDetailSectionContainer />
-    </LayoutColumn>
+    </LayoutColumnCenter>
   );
 };
 

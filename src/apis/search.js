@@ -9,7 +9,7 @@ export const searchPost = async ({
 }) => {
   const response = await GET({
     url: `/search/post/${page}`,
-    data: {
+    params: {
       area: location?.join('#'),
       category: sport?.join('#'),
       keyword,

@@ -1,12 +1,12 @@
 import React from 'react';
 import { PostEditFormContainer } from '@containers/Form';
-import { LayoutColumn } from '@components/Layout';
+import { LayoutColumnCenter } from '@components/Layout';
 
 const PostEditPage = () => {
   return (
-    <LayoutColumn>
+    <LayoutColumnCenter>
       <PostEditFormContainer />
-    </LayoutColumn>
+    </LayoutColumnCenter>
   );
 };
 

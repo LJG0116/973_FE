@@ -1,12 +1,12 @@
 import React from 'react';
 import { SigninFormContainer } from '@containers/Form';
-import { LayoutColumn } from '@components/Layout';
+import { LayoutColumnCenter } from '@components/Layout';
 
 const SigninPage = (props) => {
   return (
-    <LayoutColumn>
+    <LayoutColumnCenter>
       <SigninFormContainer />
-    </LayoutColumn>
+    </LayoutColumnCenter>
   );
 };
 

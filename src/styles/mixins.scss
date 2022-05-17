@@ -13,7 +13,16 @@
 
   border-radius: 12px;
   box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;
+}
 
+@mixin container__row {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@mixin animation {
   animation: fadein 2s;
   @keyframes fadein {
     from {
@@ -23,13 +32,6 @@
       opacity: 1;
     }
   }
-}
-
-@mixin container__row {
-  display: flex;
-  width: 100%;
-  justify-content: space-between;
-  align-items: center;
 }
 
 @mixin input__large {
@@ -132,4 +134,83 @@
   border: 1px $main__gray solid;
   margin-bottom: $main__margin__size;
   padding: 12px;
+}
+
+@mixin input__wrapper {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  top: 6px;
+  right: 8px;
+  cursor: pointer;
+
+  & :first-child {
+    margin-right: 8px;
+  }
+  & :nth-child(2) {
+    margin-right: 8px;
+  }
+}
+
+@mixin input__search {
+  @include input__large();
+  border-radius: 24px;
+  width: 100%;
+  margin-bottom: 16px;
+  display: flex;
+  align-content: center;
+}
+
+@mixin modal {
+  width: 36px;
+  color: #a8a8a8;
+}
+
+@mixin button__search {
+  width: 36px;
+  height: 36px;
+  background-size: contain;
+  background-image: url('../../../public/icons/search_black_24dp.svg');
+}
+
+@mixin badge {
+  display: inline-block;
+  border: 1px $primary solid;
+  border-radius: 48px;
+  padding: 4px;
+  margin: 2px;
+  color: $primary;
+  font-size: 12px;
+  cursor: pointer;
+  letter-spacing: -1px;
+}
+
+@mixin cards__wrapper {
+  text-align: left;
+  margin-bottom: $main__margin__size;
+}
+
+@mixin write__button {
+  position: absolute;
+  top: 96px;
+  right: 48px;
+
+  &:hover {
+    color: $primary;
+  }
+}
+
+@mixin card__wrapper {
+  padding: 12px;
+  border-bottom: #f5f5f5 solid;
+  cursor: pointer;
+}
+
+@mixin card__nickname {
+  color: $primary;
+  margin-right: 8px;
+}
+
+@mixin card__date {
+  color: $sub__gray;
 }

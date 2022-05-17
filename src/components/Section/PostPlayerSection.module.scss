@@ -4,6 +4,7 @@
 .root {
   width: 80%;
   text-align: center;
+  @include animation();
 }
 
 .title {
@@ -11,31 +12,21 @@
 }
 
 .cards__wrapper {
-  text-align: left;
-  margin-bottom: $main__margin__size;
+  @include cards__wrapper();
 }
 
 .write__button {
-  position: absolute;
-  top: 96px;
-  right: 48px;
-
-  &:hover {
-    color: $primary;
-  }
+  @include write__button();
 }
 
 .card__wrapper {
-  padding: 12px;
-  border-bottom: #f5f5f5 solid;
-  cursor: pointer;
+  @include card__wrapper();
 }
 
 .card__nickname {
-  color: $primary;
-  margin-right: 8px;
+  @include card__nickname();
 }
 
 .card__date {
-  color: $sub__gray;
+  @include card__date();
 }

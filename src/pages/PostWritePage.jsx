@@ -1,12 +1,12 @@
 import React from 'react';
 import { PostWriteFormContainer } from '@containers/Form';
-import { LayoutColumn } from '@components/Layout';
+import { LayoutColumnCenter } from '@components/Layout';
 
 const PostWritePage = () => {
   return (
-    <LayoutColumn>
+    <LayoutColumnCenter>
       <PostWriteFormContainer />
-    </LayoutColumn>
+    </LayoutColumnCenter>
   );
 };
 
