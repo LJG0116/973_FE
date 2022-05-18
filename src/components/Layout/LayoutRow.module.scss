@@ -1,8 +1,11 @@
 @import '@styles/constants';
+@import '@styles/mixins';
 
 .root {
+  @include animation();
   min-height: calc(100vh - 144px);
   display: flex;
   justify-content: center;
   margin: $main__margin__size;
+  margin: 96px 0;
 }

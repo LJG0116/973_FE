@@ -2,7 +2,6 @@
 @import '@styles/constants';
 
 .root {
-  @include animation();
   position: relative;
   display: flex;
   flex-direction: column;

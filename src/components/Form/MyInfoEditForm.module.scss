@@ -31,6 +31,7 @@
   right: 0;
   &:hover {
     color: $primary;
+    transition: color 300ms ease-in-out;
   }
 }
 
