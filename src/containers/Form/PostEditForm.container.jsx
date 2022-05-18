@@ -22,9 +22,7 @@ const PostEditFormContainer = () => {
       location: [],
       text: '',
     },
-    onClick: (e) => {
-      console.log(e);
-    },
+    onClick: (e) => {},
     onSubmit: async ({ location, sport, text, title }) => {
       const { nickname, userId } = user;
       const response = await updatePost({

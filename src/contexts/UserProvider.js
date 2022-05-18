@@ -20,7 +20,6 @@ const UserProvider = ({ children }) => {
       email,
       nickname,
     });
-    console.log(nickname);
   };
 
   const removeUser = (id) => {

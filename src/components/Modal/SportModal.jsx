@@ -17,7 +17,6 @@ const SportModal = (props) => {
 
   const handleSportClick = (e) => {
     const value = e.currentTarget.getAttribute('value');
-    console.log(value);
     const filteredSport = selectedSport.filter((element) => element === value);
 
     if (filteredSport.length) {

@@ -9,7 +9,6 @@ export const writePost = async ({
   userId,
   type,
 }) => {
-  console.log(type);
   const response =
     type === 'player'
       ? await POST({

@@ -21,9 +21,7 @@ const SignupFormContainer = (props) => {
       emailCheck: false,
       nicknameCheck: false,
     },
-    onClick: (e) => {
-      console.log(e);
-    },
+    onClick: (e) => {},
     onSubmit: ({
       email,
       confirmPassword,

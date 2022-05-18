@@ -21,9 +21,7 @@ const PostWriteFormContainer = () => {
       location: [],
       text: '',
     },
-    onClick: (e) => {
-      console.log(e);
-    },
+    onClick: (e) => {},
     onSubmit: async ({ location, sport, text, title }) => {
       const { nickname, userId } = user;
       const response = await writePost({
@@ -49,7 +47,6 @@ const PostWriteFormContainer = () => {
     },
   });
   const { type } = useParams();
-  console.log(type);
   const history = useHistory();
   const { user } = useUsers();
 

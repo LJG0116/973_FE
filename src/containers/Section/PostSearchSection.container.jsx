@@ -22,7 +22,6 @@ const PostSearchSectionContainer = () => {
         type: '',
         page: 1,
       });
-      console.log(response.data);
       setSearch(response.data);
       //setValues({});
     },
