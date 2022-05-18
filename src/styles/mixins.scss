@@ -214,3 +214,9 @@
 @mixin card__date {
   color: $sub__gray;
 }
+
+@mixin nodata {
+  font-size: $main__margin__size;
+  color: $sub__gray;
+  text-align: center;
+}

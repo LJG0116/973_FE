@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './PostPlayerSection.module.scss';
+import styles from './PostCoachSection.module.scss';
 import classNames from 'classnames/bind';
 import { useHistory, withRouter } from 'react-router-dom';
 
@@ -22,7 +22,7 @@ const PostCoachSection = (props) => {
         게시글 작성
       </button>
       <div className={styles.cards__wrapper}>
-        {values.length &&
+        {values.length ? (
           values.map((element) => (
             <div
               className={styles.card__wrapper}
@@ -42,7 +42,10 @@ const PostCoachSection = (props) => {
               <h2>{element.title}</h2>
               {/* <div>{element.text}</div> */}
             </div>
-          ))}
+          ))
+        ) : (
+          <div className={styles.nodata}>게시글이 없습니다.</div>
+        )}
       </div>
     </div>
   );

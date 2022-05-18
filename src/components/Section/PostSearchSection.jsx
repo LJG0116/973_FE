@@ -30,7 +30,7 @@ const PostSearchSection = (props) => {
         onSubmit={onSubmit}
       />
       <div className={styles.cards__wrapper}>
-        {search.length &&
+        {search.length ? (
           search.map((element) => (
             <div
               className={styles.card__wrapper}
@@ -50,7 +50,10 @@ const PostSearchSection = (props) => {
               <h2>{element.title}</h2>
               {/* <div>{element.text}</div> */}
             </div>
-          ))}
+          ))
+        ) : (
+          <div className={styles.nodata}>검색 결과가 없습니다.</div>
+        )}
       </div>
     </div>
   );
