@@ -8,3 +8,5 @@ export { default as PostEditPage } from './PostEditPage';
 export { default as PostPlayerPage } from './PostPlayerPage';
 export { default as PostCoachPage } from './PostCoachPage';
 export { default as PostSearchPage } from './PostSearchPage';
+export { default as ChatListPage } from './ChatListPage';
+export { default as ChatPage } from './ChatPage';
