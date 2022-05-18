@@ -34,6 +34,7 @@ const PostDetailSectionContainer = () => {
       location: data.area,
       sport: data.category,
       nickname: data.nickname,
+      date: data.date,
     });
   }, [id]);
 
