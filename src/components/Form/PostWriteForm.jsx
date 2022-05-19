@@ -41,40 +41,42 @@ const PostWriteForm = (props) => {
         />
       </div>
       {/* 위치 */}
-      <div className={styles.modal} onClick={handleLocationClick}>
-        <p>지역 선택하기 &gt;</p>
-        <div className={styles.span__wrapper}>
-          {values.location.map((element) => (
-            <span className={styles.badge} key={element}>
-              {element}
-            </span>
-          ))}
+      <div className={styles.modal__wrapper}>
+        <div className={styles.modal} onClick={handleLocationClick}>
+          지역 선택하기 &gt;
+          <div className={styles.span__wrapper}>
+            {values.location.map((element) => (
+              <span className={styles.badge} key={element}>
+                {element}
+              </span>
+            ))}
+          </div>
         </div>
-      </div>
-      {isLocationOpen ? (
-        <LocationModal
-          onClick={handleLocationClick}
-          onListClick={onListClick}
-        />
-      ) : (
-        ''
-      )}
-      {/* 종목 */}
-      <div className={styles.modal} onClick={handleSportClick}>
-        <p>종목 선택하기 &gt;</p>
-        <div className={styles.span__wrapper}>
-          {values.sport.map((element) => (
-            <span className={styles.badge} key={element}>
-              {element}
-            </span>
-          ))}
+        {isLocationOpen ? (
+          <LocationModal
+            onClick={handleLocationClick}
+            onListClick={onListClick}
+          />
+        ) : (
+          ''
+        )}
+        {/* 종목 */}
+        <div className={styles.modal} onClick={handleSportClick}>
+          종목 선택하기 &gt;
+          <div className={styles.span__wrapper}>
+            {values.sport.map((element) => (
+              <span className={styles.badge} key={element}>
+                {element}
+              </span>
+            ))}
+          </div>
         </div>
+        {isSportOpen ? (
+          <SportModal onClick={handleSportClick} onListClick={onListClick} />
+        ) : (
+          ''
+        )}
       </div>
-      {isSportOpen ? (
-        <SportModal onClick={handleSportClick} onListClick={onListClick} />
-      ) : (
-        ''
-      )}
       {/* 본문 */}
       <textarea
         className={styles.post__textarea}
