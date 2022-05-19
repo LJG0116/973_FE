@@ -30,26 +30,33 @@ const PostDetailSection = (props) => {
           <span className={styles.post__author}>
             {values.nickname || '김빡빡'}
           </span>
-          <span className={styles.post__date}>
+          {!isMine && <button>채팅</button>}
+          <div className={styles.post__date}>
             {values.date?.replace(/T/g, ' ') || '0000-00-00'}
-          </span>
+          </div>
         </div>
       </div>
       {/* 위치 */}
       <div className={styles.badge__wrapper}>
-        {values.location?.map((element) => (
-          <span className={styles.badge} value={element} key={element}>
-            {element}
-          </span>
-        ))}
+        {values.location?.map(
+          (element) =>
+            element && (
+              <span className={styles.badge} value={element} key={element}>
+                {element}
+              </span>
+            )
+        )}
       </div>
       {/* 종목 */}
       <div className={cx(styles.badge__wrapper, styles.last)}>
-        {values.sport?.map((element) => (
-          <span className={styles.badge} value={element} key={element}>
-            {element}
-          </span>
-        ))}
+        {values.sport?.map(
+          (element) =>
+            element && (
+              <span className={styles.badge} value={element} key={element}>
+                {element}
+              </span>
+            )
+        )}
       </div>
       {/* 본문 */}
       <div className={styles.post__textarea}>{values.text || '텍스트'}</div>

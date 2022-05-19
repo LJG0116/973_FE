@@ -90,3 +90,9 @@
 .badge {
   @include badge();
 }
+
+.detail__wrapper {
+  &:last-child {
+    text-align: right;
+  }
+}

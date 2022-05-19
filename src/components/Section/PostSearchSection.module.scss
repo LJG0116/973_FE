@@ -33,3 +33,26 @@
 .nodata {
   @include nodata();
 }
+
+.badge {
+  @include badge();
+}
+
+.card__post {
+  position: relative;
+}
+
+.text {
+  width: 70%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.badge__wrapper {
+  position: absolute;
+  top: 0;
+  right: 0;
+
+  text-align: right;
+}

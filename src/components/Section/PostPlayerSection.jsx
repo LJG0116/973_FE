@@ -22,7 +22,7 @@ const PostPlayerSection = (props) => {
         게시글 작성
       </button>
       <div className={styles.cards__wrapper}>
-        {values.length &&
+        {values.length ? (
           values.map((element) => (
             <div
               className={styles.card__wrapper}
@@ -39,10 +39,46 @@ const PostPlayerSection = (props) => {
                   {element.date?.replace(/T/g, ' ')}
                 </span>
               </div>
-              <h2>{element.title}</h2>
-              {/* <div>{element.text}</div> */}
+              <div className={styles.card__post}>
+                <h2>{element.title}</h2>
+                <div className={styles.text}>{element.text}</div>
+                <div className={styles.badge__wrapper}>
+                  <div>
+                    {element.area?.map(
+                      (element) =>
+                        element && (
+                          <span
+                            className={styles.badge}
+                            value={element}
+                            key={element}
+                          >
+                            {element}
+                          </span>
+                        )
+                    )}
+                  </div>
+                  {/* 종목 */}
+                  <div>
+                    {element.category?.map(
+                      (element) =>
+                        element && (
+                          <span
+                            className={styles.badge}
+                            value={element}
+                            key={element}
+                          >
+                            {element}
+                          </span>
+                        )
+                    )}
+                  </div>
+                </div>
+              </div>
             </div>
-          ))}
+          ))
+        ) : (
+          <div className={styles.nodata}>게시글이 없습니다.</div>
+        )}
       </div>
     </div>
   );
