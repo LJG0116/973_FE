@@ -1,6 +1,7 @@
 import React, { useEffect, useState, useCallback } from 'react';
 import { ChatListSection } from '@components/Section';
-import { getPlayerPosts } from '@apis/post';
+import { getChats } from '@apis/chat';
+import { useUsers } from '@contexts/UserProvider';
 
 const initialState = [
   {
@@ -14,10 +15,12 @@ const initialState = [
 
 const ChatListSectionContainer = () => {
   const [values, setValues] = useState(initialState);
+  const { user } = useUsers();
 
   const init = useCallback(async () => {
-    const response = await getPlayerPosts({ page: 1 });
-    setValues(response.data);
+    const response = await getChats({ userId: user.userId });
+    // setValues(response.data);
+    console.log(response);
   }, []);
 
   useEffect(() => {
