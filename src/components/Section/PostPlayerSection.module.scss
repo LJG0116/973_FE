@@ -29,3 +29,7 @@
 .card__date {
   @include card__date();
 }
+
+.nodata {
+  @include nodata();
+}

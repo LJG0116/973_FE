@@ -22,7 +22,7 @@ const PostPlayerSection = (props) => {
         게시글 작성
       </button>
       <div className={styles.cards__wrapper}>
-        {values.length &&
+        {values.length ? (
           values.map((element) => (
             <div
               className={styles.card__wrapper}
@@ -42,7 +42,10 @@ const PostPlayerSection = (props) => {
               <h2>{element.title}</h2>
               {/* <div>{element.text}</div> */}
             </div>
-          ))}
+          ))
+        ) : (
+          <div className={styles.nodata}>검색 결과가 없습니다.</div>
+        )}
       </div>
     </div>
   );
