@@ -2,7 +2,7 @@
 
 .root {
   @include animation();
-  min-height: calc(100vh - 48px);
+  min-height: calc(100vh - 240px);
   display: flex;
   flex-direction: column;
   margin: 96px 0;

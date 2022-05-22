@@ -11,6 +11,7 @@ const PostDetailSection = (props) => {
     isMine = false,
     onDeleteClick = () => console.log('onDeleteClick'),
     onUpdateClick = () => console.log('onUpdateClick'),
+    onChatClick = () => console.log('onChatClick'),
     className: rootClassName,
   } = props;
   const className = cx(styles.root, rootClassName);
@@ -30,7 +31,11 @@ const PostDetailSection = (props) => {
           <span className={styles.post__author}>
             {values.nickname || '김빡빡'}
           </span>
-          {!isMine && <button>채팅</button>}
+          {!isMine && (
+            <button type="button" onClick={onChatClick}>
+              채팅
+            </button>
+          )}
           <div className={styles.post__date}>
             {values.date?.replace(/T/g, ' ') || '0000-00-00'}
           </div>

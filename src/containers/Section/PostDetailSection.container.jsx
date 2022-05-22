@@ -49,6 +49,10 @@ const PostDetailSectionContainer = () => {
     history.push(`/edit/${id}`);
   };
 
+  const handleChatClick = async () => {
+    history.push(`/chat/${user.userId}/${values.userId}`);
+  };
+
   useEffect(() => {
     init();
   }, [init]);
@@ -59,6 +63,7 @@ const PostDetailSectionContainer = () => {
       isMine={isMine}
       onDeleteClick={handleDeleteClick}
       onUpdateClick={handleUpdateClick}
+      onChatClick={handleChatClick}
     />
   );
 };

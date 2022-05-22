@@ -1,0 +1,76 @@
+@import '@styles/mixins';
+@import '@styles/constants';
+
+.root {
+  @include container__column();
+  justify-content: flex-start;
+  width: 70%;
+  height: 640px;
+}
+
+.title {
+  @include title();
+}
+
+.message__list {
+  width: 80%;
+  height: 480px;
+  border-bottom: 1px $main__gray solid;
+  margin-bottom: 12px;
+  overflow: scroll;
+}
+
+.message {
+  width: fit-content;
+  margin-right: auto;
+  border: 1px $primary solid;
+  border-radius: 12px;
+  padding: 4px 8px;
+  margin: 4px 0;
+}
+
+.message__receiver {
+  display: flex;
+
+  & div {
+    position: relative;
+    span {
+      color: $main__gray;
+      font-size: 12px;
+      position: absolute;
+      right: -50px;
+      bottom: 0;
+    }
+  }
+}
+
+.message__sender {
+  display: flex;
+  flex-direction: row-reverse;
+
+  & div {
+    position: relative;
+    span {
+      color: $main__gray;
+      font-size: 12px;
+      position: absolute;
+      left: -50px;
+      bottom: 0;
+    }
+  }
+}
+
+.message__input__wrapper {
+  display: flex;
+  justify-content: space-between;
+  width: 80%;
+
+  & button {
+    color: $primary;
+
+    &:hover {
+      color: $secondary;
+      transition: color 300ms ease-in-out;
+    }
+  }
+}

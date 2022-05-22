@@ -7,3 +7,11 @@ export const getChats = async ({ userId }) => {
   });
   return response;
 };
+
+export const getChat = async ({ senderId, receiverId }) => {
+  const response = await GET({
+    url: '/chat/enter',
+    params: { senderId, receiverId },
+  });
+  return response;
+};

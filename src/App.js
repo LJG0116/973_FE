@@ -28,8 +28,12 @@ function App() {
         <PublicRoute exact from="/signup" to="/my" component={SignupPage} />
         <PublicRoute exact from="/signin" to="/my" component={SigninPage} />
         <PrivateRoute exact from="/my" component={MyPage} />
-        <PrivateRoute exact from="/chat" component={ChatListPage} />
-        <PrivateRoute exact from="/chat/:id" component={ChatPage} />
+        <PrivateRoute
+          exact
+          from="/chat/:senderId/:receiverId"
+          component={ChatPage}
+        />
+        {/* <PrivateRoute exact from="/chat" component={ChatListPage} /> */}
         <Route exact from="/search" component={PostSearchPage} />
         <Route path="/player" exact component={PostPlayerPage} />
         <Route path="/coach" exact component={PostCoachPage} />
