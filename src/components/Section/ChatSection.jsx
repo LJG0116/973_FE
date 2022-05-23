@@ -8,6 +8,7 @@ const cx = classNames.bind(styles);
 const ChatSection = (props) => {
   const {
     values = {},
+    message = '',
     onSubmit = () => console.log('onSubmit'),
     onChange = () => console.log('onChange'),
     className: rootClassName,
@@ -29,9 +30,9 @@ const ChatSection = (props) => {
               }
               key={element.messageTime}
             >
-              <div className={styles.message}>
+              <div className={styles.message} key={element.messageTime}>
                 {element.content}
-                <span>{element.messageTime?.split('T')[1]}</span>
+                <span>{element.messageTime.split('T')[1]}</span>
               </div>
             </div>
           ))}
@@ -39,7 +40,7 @@ const ChatSection = (props) => {
       <form className={styles.message__input__wrapper} onSubmit={onSubmit}>
         <input
           className={styles.message__input}
-          value={values.message || ''}
+          value={message}
           type="text"
           name="message"
           placeholder="메세지를 입력하세요."

@@ -14,7 +14,6 @@ const connection = () => {
 };
 
 const initialState = {
-  message: '',
   chatRoomId: '',
   messages: [],
   senderId: 0,
@@ -22,37 +21,40 @@ const initialState = {
 };
 
 const ChatSectionContainer = () => {
-  const { values, setValues, handleChange, handleSubmit } = useForm({
-    initialState,
-    onSubmit: (values) => {
-      stomp.send(
-        '/pub/chat/message',
-        {},
-        JSON.stringify({
+  const { senderId, receiverId } = useParams();
+  const [message, setMessage] = useState('');
+  const [values, setValues] = useState(initialState);
+
+  const handleChange = (e) => {
+    setMessage(e.target.value);
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    stomp.send(
+      '/pub/chat/message',
+      {},
+      JSON.stringify({
+        userId: values.senderId,
+        roomId: values.chatRoomId,
+        content: message,
+      })
+    );
+    setValues({
+      ...values,
+      messages: [
+        ...values.messages,
+        {
           userId: values.senderId,
           roomId: values.chatRoomId,
-          content: values.message,
-        })
-      );
-      setValues({
-        ...values,
-        message: 'ㅗ로롤',
-        messages: [
-          ...values.messages,
-          {
-            userId: values.senderId,
-            roomId: values.chatRoomId,
-            content: values.message,
-          },
-        ],
-      });
-    },
-    validate: ({ message }) => {
-      if (message) return;
-      return { message: '메세지를 입력해주세요.' };
-    },
-  });
-  const { senderId, receiverId } = useParams();
+          content: message,
+          messageTime: new Date().toLocaleTimeString().replace(' ', 'T'),
+        },
+      ],
+    });
+    setMessage('');
+  };
 
   const init = useCallback(async () => {
     const { data } = await getChat({ senderId, receiverId });
@@ -67,7 +69,7 @@ const ChatSectionContainer = () => {
   useEffect(() => {
     connection();
     stomp.connect({}, () => {
-      stomp.subscribe('/sub/chat/room/' + 1, (message) => {
+      stomp.subscribe(`/sub/chat/room/${values.chatRoomId}`, (message) => {
         const newMessage = JSON.parse(message.body);
         setValues({
           ...values,
@@ -75,6 +77,7 @@ const ChatSectionContainer = () => {
         });
       });
     });
+    return () => stomp.disconnect();
   }, [values, setValues]);
 
   useEffect(() => {
@@ -84,6 +87,7 @@ const ChatSectionContainer = () => {
   return (
     <ChatSection
       values={values}
+      message={message}
       onChange={handleChange}
       onSubmit={handleSubmit}
     />
