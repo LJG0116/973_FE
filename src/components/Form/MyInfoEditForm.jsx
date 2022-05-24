@@ -40,8 +40,8 @@ const MyInfoEditForm = (props) => {
           <img
             className={styles.profile__image}
             src={
-              values.srcUrl ||
-              'https://user-images.githubusercontent.com/69751205/167300027-24e32d1c-984e-4f2d-b7d1-2cef9054a81e.png'
+              values.profileImage ||
+              'https://973s3.s3.ap-northeast-2.amazonaws.com/3c861103-5d9d-4d1a-af4b-7565571cbac0.png'
             }
             alt=""
           />
@@ -61,7 +61,7 @@ const MyInfoEditForm = (props) => {
               className={styles.profile__input}
               type="text"
               name="nickname"
-              value={values.name}
+              value={values.nickname}
               placeholder="변경할 닉네임을 입력해주세요."
               onChange={onChange}
             />
@@ -79,8 +79,8 @@ const MyInfoEditForm = (props) => {
       <textarea
         className={styles.profile__textarea}
         type="text"
-        name="introduce"
-        value={values.introduce}
+        name="intro"
+        value={values.intro}
         placeholder="멋진 한 줄 소개를 입력해주세요."
         onChange={onChange}
       />

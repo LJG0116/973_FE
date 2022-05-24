@@ -1,5 +1,12 @@
 import { GET, POST } from './axios';
 
+export const getMyInfo = async ({ userId }) => {
+  const response = await GET({
+    url: `/myPage/info/${userId}`,
+  });
+  return response;
+};
+
 export const postSignin = async ({ email, password }) => {
   const response = await POST({
     url: '/user/login',
