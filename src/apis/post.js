@@ -1,5 +1,19 @@
 import { DELETE, GET, POST, PUT } from './axios';
 
+export const getRecentPlayer = async () => {
+  const response = await GET({
+    url: '/post/player',
+  });
+  return response;
+};
+
+export const getRecentCoach = async () => {
+  const response = await GET({
+    url: '/post/coach',
+  });
+  return response;
+};
+
 export const writePost = async ({
   location,
   sport,

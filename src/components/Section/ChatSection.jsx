@@ -1,7 +1,7 @@
 import React from 'react';
-import styles from './PostPlayerSection.module.scss';
+import styles from './ChatSection.module.scss';
 import classNames from 'classnames/bind';
-import { useHistory, withRouter } from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
 
 const cx = classNames.bind(styles);
 

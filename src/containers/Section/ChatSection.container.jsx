@@ -2,7 +2,6 @@ import React, { useEffect, useState, useCallback } from 'react';
 import { ChatSection } from '@components/Section';
 import { getChat } from '@apis/chat';
 import { useParams } from 'react-router-dom';
-import { useForm } from '@hooks';
 import SockJS from 'sockjs-client';
 const Stomp = require('stompjs');
 
@@ -33,7 +32,7 @@ const ChatSectionContainer = () => {
     e.preventDefault();
 
     stomp.send(
-      '/pub/chat/message',
+      `/pub/chat/message/${values.chatRoomId}`,
       {},
       JSON.stringify({
         userId: values.senderId,
