@@ -33,7 +33,7 @@ const MyInfoEditForm = (props) => {
           <input
             className={styles.disabled__input}
             type="file"
-            name="src"
+            name="profileImage"
             ref={inputRef}
             onChange={onUpload}
           />

@@ -2,7 +2,7 @@ import React, { useEffect, useCallback } from 'react';
 import { MyInfoEditForm } from '@components/Form';
 import { useForm } from '@hooks';
 import { useUsers } from '@contexts/UserProvider';
-import { getMyInfo } from '@apis/auth';
+import { getMyInfo, editMyInfo } from '@apis/auth';
 
 const MyInfoEditContainer = (props) => {
   const {
@@ -20,7 +20,18 @@ const MyInfoEditContainer = (props) => {
       intro: '',
       profileImage: '',
     },
-    onSubmit: ({ email, intro, nickname, profileImage }) => {},
+    onSubmit: async ({ email, intro, nickname, profileImageFile }) => {
+      console.log(email, intro, user.userId, nickname, profileImageFile);
+      const response = await editMyInfo({
+        email,
+        intro,
+        id: user.userId,
+        nickname,
+        profileImageFile,
+      });
+
+      console.log(response);
+    },
     validate: () => {},
   });
   const { user, removeUser } = useUsers();
