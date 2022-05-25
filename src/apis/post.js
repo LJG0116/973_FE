@@ -1,5 +1,16 @@
 import { DELETE, GET, POST, PUT } from './axios';
 
+export const getMyPosts = async ({ page, id }) => {
+  const response = await GET({
+    url: '/myPage/post',
+    params: {
+      page,
+      id,
+    },
+  });
+  return response;
+};
+
 export const getRecentPlayer = async () => {
   const response = await GET({
     url: '/post/player',

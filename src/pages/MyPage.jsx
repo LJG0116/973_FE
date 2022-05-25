@@ -1,12 +1,14 @@
 import React from 'react';
-import { LayoutRow } from '@components/Layout';
+import { Layout } from '@components/Layout';
 import { MyInfoEditFormContainer } from '@containers/Form';
+import { MyPostSectionContainer } from '@containers/Section';
 
 const MyPage = (props) => {
   return (
-    <LayoutRow>
+    <Layout>
       <MyInfoEditFormContainer />
-    </LayoutRow>
+      <MyPostSectionContainer />
+    </Layout>
   );
 };
 

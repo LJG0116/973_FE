@@ -6,3 +6,4 @@ export { default as ChatListSection } from './ChatListSection';
 export { default as ChatSection } from './ChatSection';
 export { default as RecentCoachSection } from './RecentCoachSection';
 export { default as RecentPlayerSection } from './RecentPlayerSection';
+export { default as MyPostSection } from './MyPostSection';

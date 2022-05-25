@@ -5,3 +5,4 @@ export { default as PostSearchSectionContainer } from './PostSearchSection.conta
 export { default as HomeSectionContainer } from './HomeSection.container';
 export { default as ChatListSectionContainer } from './ChatListSection.container';
 export { default as ChatSectionContainer } from './ChatSection.container';
+export { default as MyPostSectionContainer } from './MyPostSection.container';
