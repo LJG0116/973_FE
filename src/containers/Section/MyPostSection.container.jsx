@@ -19,7 +19,7 @@ const MyPostSectionContainer = () => {
   const { user } = useUsers();
 
   const init = useCallback(async () => {
-    const response = await getMyPosts({ page: 1, id: user.userId });
+    const response = await getMyPosts({ page: 1, userId: user.userId });
     setValues(response.data);
     console.log(response.data);
   }, [user.userId]);

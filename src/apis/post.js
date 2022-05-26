@@ -1,11 +1,11 @@
 import { DELETE, GET, POST, PUT } from './axios';
 
-export const getMyPosts = async ({ page, id }) => {
+export const getMyPosts = async ({ page, userId }) => {
   const response = await GET({
     url: '/myPage/post',
     params: {
       page,
-      id,
+      userId,
     },
   });
   return response;

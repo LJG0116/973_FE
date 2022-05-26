@@ -1,4 +1,4 @@
-import { DELETE, GET, POST, PUT } from './axios';
+import { GET } from './axios';
 
 export const getChats = async ({ userId }) => {
   const response = await GET({

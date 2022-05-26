@@ -19,9 +19,9 @@ const ChatListSectionContainer = () => {
 
   const init = useCallback(async () => {
     const response = await getChats({ userId: user.userId });
-    // setValues(response.data);
+    setValues(response.data);
     console.log(response);
-  }, []);
+  }, [user.userId]);
 
   useEffect(() => {
     init();

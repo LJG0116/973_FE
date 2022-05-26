@@ -33,7 +33,7 @@ function App() {
           from="/chat/:senderId/:receiverId"
           component={ChatPage}
         />
-        {/* <PrivateRoute exact from="/chat" component={ChatListPage} /> */}
+        <PrivateRoute exact from="/chat" component={ChatListPage} />
         <Route exact from="/search" component={PostSearchPage} />
         <Route path="/player" exact component={PostPlayerPage} />
         <Route path="/coach" exact component={PostCoachPage} />
