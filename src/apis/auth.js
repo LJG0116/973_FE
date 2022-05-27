@@ -24,9 +24,9 @@ export const editMyInfo = async ({
   return response;
 };
 
-export const getMyInfo = async ({ userId }) => {
+export const getMyInfo = async ({ id }) => {
   const response = await GET({
-    url: `/myPage/info/${userId}`,
+    url: `/myPage/info/${id}`,
   });
   return response;
 };

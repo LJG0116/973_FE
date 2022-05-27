@@ -41,7 +41,7 @@ const MyInfoEditContainer = (props) => {
   };
 
   const init = useCallback(async () => {
-    const { data } = await getMyInfo({ userId: user.userId });
+    const { data } = await getMyInfo({ id: user.userId });
     console.log(data);
 
     setValues({
