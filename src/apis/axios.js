@@ -38,10 +38,11 @@ export const POST = async ({ url, params = {}, data = {} }) => {
   }
 };
 
-export const PUT = async ({ url, params = {}, data = {} }) => {
+export const PUT = async ({ url, params = {}, data = {}, headers = {} }) => {
   try {
     const response = await axios({
       method: 'put',
+      headers,
       url,
       params,
       data,

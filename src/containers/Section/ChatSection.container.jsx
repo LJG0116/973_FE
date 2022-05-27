@@ -76,6 +76,7 @@ const ChatSectionContainer = () => {
         });
       });
     });
+    return () => stomp.disconnect();
   }, [values, setValues]);
 
   useEffect(() => {

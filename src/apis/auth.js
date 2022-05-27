@@ -8,16 +8,19 @@ export const editMyInfo = async ({
   profileImageFile,
 }) => {
   // const formData = new FormData();
-  // formData.append('file', profileImageFile);
+  // formData.append('profileImage', profileImageFile);
   // formData.append('request', jsonBlob(request));
 
   const response = await PUT({
     url: '/myPage/info',
-    data: {
+    headers: { 'Content-Type': 'multipart/form-data' },
+    params: {
       email,
       id,
       intro,
       nickname,
+    },
+    data: {
       profileImage: profileImageFile,
     },
   });

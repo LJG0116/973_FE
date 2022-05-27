@@ -80,7 +80,7 @@ const MyInfoEditForm = (props) => {
         className={styles.profile__textarea}
         type="text"
         name="intro"
-        value={values.intro}
+        value={values.intro || ''}
         placeholder="멋진 한 줄 소개를 입력해주세요."
         onChange={onChange}
       />
