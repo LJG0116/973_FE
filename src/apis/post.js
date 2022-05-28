@@ -25,7 +25,7 @@ export const getRecentCoach = async () => {
   return response;
 };
 
-export const writePost = async ({
+export const createPost = async ({
   location,
   sport,
   text,

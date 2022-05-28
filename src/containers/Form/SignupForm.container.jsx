@@ -3,7 +3,7 @@ import { useHistory } from 'react-router';
 import { SignupForm } from '@components/Form';
 import { useForm } from '@hooks';
 import { validationPassword } from '@utils/validation';
-import { postSignup } from '@apis/auth';
+import { signup } from '@apis/auth';
 
 const SignupFormContainer = (props) => {
   const {
@@ -34,7 +34,7 @@ const SignupFormContainer = (props) => {
         alert('이메일, 닉네임 확인을 해주세요.');
         return;
       }
-      postSignup({
+      signup({
         email,
         confirmPassword,
         nickname,

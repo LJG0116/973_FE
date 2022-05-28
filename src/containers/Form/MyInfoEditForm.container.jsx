@@ -2,7 +2,7 @@ import React, { useEffect, useCallback } from 'react';
 import { MyInfoEditForm } from '@components/Form';
 import { useForm } from '@hooks';
 import { useUsers } from '@contexts/UserProvider';
-import { getMyInfo, editMyInfo } from '@apis/auth';
+import { getMyInfo, updateMyInfo } from '@apis/auth';
 
 const MyInfoEditContainer = (props) => {
   const {
@@ -22,7 +22,7 @@ const MyInfoEditContainer = (props) => {
     },
     onSubmit: async ({ email, intro, nickname, profileImageFile }) => {
       console.log(email, intro, user.userId, nickname, profileImageFile);
-      const response = await editMyInfo({
+      const response = await updateMyInfo({
         email,
         intro,
         id: user.userId,
@@ -30,7 +30,9 @@ const MyInfoEditContainer = (props) => {
         profileImageFile,
       });
 
-      console.log(response);
+      if (response) {
+        alert('내 정보를 수정했습니다.');
+      }
     },
     validate: () => {},
   });

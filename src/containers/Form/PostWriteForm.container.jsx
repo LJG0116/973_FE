@@ -3,7 +3,7 @@ import { PostWriteForm } from '@components/Form';
 import { useForm } from '@hooks';
 import { useHistory, useParams } from 'react-router-dom';
 import { useUsers } from '@contexts/UserProvider';
-import { writePost } from '@apis/post';
+import { createPost } from '@apis/post';
 
 const PostWriteFormContainer = () => {
   const {
@@ -24,7 +24,7 @@ const PostWriteFormContainer = () => {
     onClick: (e) => {},
     onSubmit: async ({ location, sport, text, title }) => {
       const { nickname, userId } = user;
-      const response = await writePost({
+      const response = await createPost({
         location,
         sport,
         text,

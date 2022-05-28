@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
-import { getCheckEmail, getCheckNickname } from '@apis/auth';
+import { checkEmail, checkNickname } from '@apis/auth';
 
-const useForm = ({ initialValues, onSubmit, onClick, validate }) => {
+const useForm = ({ initialValues, onSubmit, validate }) => {
   const [values, setValues] = useState(initialValues);
   const [errors, setErrors] = useState({});
   const [isLoading, setIsLoading] = useState(false);
@@ -14,7 +14,6 @@ const useForm = ({ initialValues, onSubmit, onClick, validate }) => {
     []
   );
 
-  // signup 이메일 중복확인 click event hook
   const handleEmailClick = async (e) => {
     setIsLoading(true);
 
@@ -27,7 +26,7 @@ const useForm = ({ initialValues, onSubmit, onClick, validate }) => {
     }
 
     if (!newErrors || Object.keys(newErrors).length === 0) {
-      const response = await getCheckEmail({ email });
+      const response = await checkEmail({ email });
       if (response) {
         setValues({
           ...values,
@@ -41,7 +40,6 @@ const useForm = ({ initialValues, onSubmit, onClick, validate }) => {
     setIsLoading(false);
   };
 
-  // signup 닉네임 중복확인 click event hook
   const handleNicknameClick = async (e) => {
     setIsLoading(true);
 
@@ -54,7 +52,7 @@ const useForm = ({ initialValues, onSubmit, onClick, validate }) => {
     }
 
     if (!newErrors || Object.keys(newErrors).length === 0) {
-      const response = await getCheckNickname({ nickname });
+      const response = await checkNickname({ nickname });
       if (response) {
         setValues({
           ...values,

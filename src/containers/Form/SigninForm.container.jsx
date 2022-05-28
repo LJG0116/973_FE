@@ -3,7 +3,7 @@ import { useHistory } from 'react-router-dom';
 import { SigninForm } from '@components/Form';
 import { useForm } from '@hooks';
 import { validationEmail } from '@utils/validation';
-import { postSignin } from '@apis/auth';
+import { signin } from '@apis/auth';
 import { useUsers } from '@contexts/UserProvider';
 
 const SigninFormContainer = (props) => {
@@ -13,7 +13,7 @@ const SigninFormContainer = (props) => {
       password: '',
     },
     onSubmit: async ({ email, password }) => {
-      const response = await postSignin({ email, password });
+      const response = await signin({ email, password });
 
       if (!response) return;
       addUser(response.data);

@@ -1,16 +1,12 @@
 import { GET, POST, PUT } from './axios';
 
-export const editMyInfo = async ({
+export const updateMyInfo = async ({
   email,
   id,
   intro,
   nickname,
   profileImageFile,
 }) => {
-  // const formData = new FormData();
-  // formData.append('profileImage', profileImageFile);
-  // formData.append('request', jsonBlob(request));
-
   const response = await PUT({
     url: '/myPage/info',
     headers: { 'Content-Type': 'multipart/form-data' },
@@ -34,7 +30,7 @@ export const getMyInfo = async ({ id }) => {
   return response;
 };
 
-export const postSignin = async ({ email, password }) => {
+export const signin = async ({ email, password }) => {
   const response = await POST({
     url: '/user/login',
     data: {
@@ -45,7 +41,7 @@ export const postSignin = async ({ email, password }) => {
   return response;
 };
 
-export const postSignup = async ({
+export const signup = async ({
   email,
   confirmPassword,
   nickname,
@@ -63,14 +59,14 @@ export const postSignup = async ({
   return response;
 };
 
-export const getCheckEmail = async ({ email }) => {
+export const checkEmail = async ({ email }) => {
   const response = await GET({
     url: `/user/email/${email}`,
   });
   return response;
 };
 
-export const getCheckNickname = async ({ nickname }) => {
+export const checkNickname = async ({ nickname }) => {
   const response = await GET({
     url: `/user/nickname/${nickname}`,
   });
