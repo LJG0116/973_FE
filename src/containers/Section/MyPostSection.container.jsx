@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useCallback } from 'react';
 import { getMyPosts } from '@apis/post';
-import { MyPostSection } from '@components/Section';
+import { ListSection } from '@components/Section';
 import { useUsers } from '@contexts/UserProvider';
 
 const initialState = [
@@ -15,13 +15,11 @@ const initialState = [
 
 const MyPostSectionContainer = () => {
   const [values, setValues] = useState(initialState);
-  // const [page, setPage] = useState(1);
   const { user } = useUsers();
 
   const init = useCallback(async () => {
     const response = await getMyPosts({ page: 1, userId: user.userId });
     setValues(response.data);
-    console.log(response.data);
   }, [user.userId]);
 
   useEffect(() => {
@@ -30,7 +28,7 @@ const MyPostSectionContainer = () => {
 
   return (
     <>
-      <MyPostSection values={values} />
+      <ListSection values={values} type="" title="내 게시글" />
     </>
   );
 };

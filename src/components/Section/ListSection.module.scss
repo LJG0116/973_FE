@@ -6,9 +6,12 @@
   text-align: center;
 }
 
+.my {
+  text-align: left;
+}
+
 .title {
   @include title();
-  text-align: left;
 }
 
 .cards__wrapper {

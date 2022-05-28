@@ -1,27 +1,33 @@
 import React from 'react';
-import styles from './PostCoachSection.module.scss';
+import styles from './ListSection.module.scss';
 import classNames from 'classnames/bind';
 import { useHistory, withRouter } from 'react-router-dom';
 
 const cx = classNames.bind(styles);
 
-const PostCoachSection = (props) => {
-  const { values = {}, className: rootClassName } = props;
+const ListSection = (props) => {
+  const {
+    values = {},
+    title = '',
+    type = '',
+    className: rootClassName,
+  } = props;
   const history = useHistory();
 
   const className = cx(styles.root, rootClassName);
-  console.log(values);
 
   return (
     <div className={className}>
-      <h1 className={styles.title}>코치</h1>
-      <button
-        className={styles.write__button}
-        type="button"
-        onClick={() => history.push('/write/coach')}
-      >
-        게시글 작성
-      </button>
+      <h1 className={cx(styles.title, { [styles.my]: !type })}>{title}</h1>
+      {type && (
+        <button
+          className={styles.write__button}
+          type="button"
+          onClick={() => history.push(`/write/${type}`)}
+        >
+          게시글 작성
+        </button>
+      )}
       <div className={styles.cards__wrapper}>
         {values.length ? (
           values.map((element) => (
@@ -85,4 +91,4 @@ const PostCoachSection = (props) => {
   );
 };
 
-export default withRouter(PostCoachSection);
+export default withRouter(ListSection);

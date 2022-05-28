@@ -1,13 +1,13 @@
 import React, { useEffect, useState, useCallback } from 'react';
-import { PostCoachSection } from '@components/Section';
+import { ListSection } from '@components/Section';
 import { getCoachPosts } from '@apis/post';
 import { Paginationbar } from '@components/Bar';
 
 const initialState = [
   {
     title: '',
-    location: [],
-    sport: [],
+    area: [],
+    category: [],
     text: '',
     userId: '',
   },
@@ -42,7 +42,7 @@ const PostCoachSectionContainer = () => {
 
   return (
     <>
-      <PostCoachSection values={values} />
+      <ListSection values={values} type="coach" title="코치" />
       <Paginationbar page={page} onClick={handleClick} />
     </>
   );

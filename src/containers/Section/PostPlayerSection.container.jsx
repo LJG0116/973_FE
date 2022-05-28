@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useCallback } from 'react';
-import { PostPlayerSection } from '@components/Section';
+import { ListSection } from '@components/Section';
 import { getPlayerPosts } from '@apis/post';
 import { Paginationbar } from '@components/Bar';
 
@@ -42,7 +42,7 @@ const PostPlayerSectionContainer = () => {
 
   return (
     <>
-      <PostPlayerSection values={values} />
+      <ListSection values={values} type="player" title="플레이어" />
       <Paginationbar page={page} onClick={handleClick} />
     </>
   );
