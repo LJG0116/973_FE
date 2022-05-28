@@ -3,18 +3,8 @@ import { ListSection } from '@components/Section';
 import { getPlayerPosts } from '@apis/post';
 import { Paginationbar } from '@components/Bar';
 
-const initialState = [
-  {
-    title: '',
-    location: [],
-    sport: [],
-    text: '',
-    userId: '',
-  },
-];
-
 const PostPlayerSectionContainer = () => {
-  const [values, setValues] = useState(initialState);
+  const [values, setValues] = useState([]);
   const [page, setPage] = useState(1);
 
   const init = useCallback(async () => {

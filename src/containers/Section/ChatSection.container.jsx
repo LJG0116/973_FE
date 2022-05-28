@@ -3,26 +3,20 @@ import { ChatSection } from '@components/Section';
 import { getChat } from '@apis/chat';
 import { useParams } from 'react-router-dom';
 import SockJS from 'sockjs-client';
+const { REACT_APP_END_POINT } = process.env;
 const Stomp = require('stompjs');
 
 let stomp;
 
 const connection = () => {
-  let sockJS = new SockJS('http://3.39.40.188/chat');
+  let sockJS = new SockJS(`${REACT_APP_END_POINT}/chat`);
   stomp = Stomp.over(sockJS);
-};
-
-const initialState = {
-  chatRoomId: '',
-  messages: [],
-  senderId: 0,
-  senderNickname: 0,
 };
 
 const ChatSectionContainer = () => {
   const { senderId, receiverId } = useParams();
   const [message, setMessage] = useState('');
-  const [values, setValues] = useState(initialState);
+  const [values, setValues] = useState({});
 
   const handleChange = (e) => {
     setMessage(e.target.value);
@@ -32,7 +26,7 @@ const ChatSectionContainer = () => {
     e.preventDefault();
 
     stomp.send(
-      `/pub/chat/message`,
+      '/pub/chat/message',
       {},
       JSON.stringify({
         userId: values.senderId,

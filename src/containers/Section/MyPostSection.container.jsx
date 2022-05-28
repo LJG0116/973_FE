@@ -3,18 +3,8 @@ import { getMyPosts } from '@apis/post';
 import { ListSection } from '@components/Section';
 import { useUsers } from '@contexts/UserProvider';
 
-const initialState = [
-  {
-    title: '',
-    location: [],
-    sport: [],
-    text: '',
-    userId: '',
-  },
-];
-
 const MyPostSectionContainer = () => {
-  const [values, setValues] = useState(initialState);
+  const [values, setValues] = useState([]);
   const { user } = useUsers();
 
   const init = useCallback(async () => {

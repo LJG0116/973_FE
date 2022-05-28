@@ -11,9 +11,6 @@ const PostSearchSectionContainer = () => {
       location: [],
       type: '',
     },
-    onClick: (e) => {
-      console.log(e);
-    },
     onSubmit: async ({ keyword, sport, location, type }) => {
       const response = await searchPost({
         keyword,

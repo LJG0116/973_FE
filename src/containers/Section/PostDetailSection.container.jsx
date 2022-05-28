@@ -4,18 +4,9 @@ import { useUsers } from '@contexts/UserProvider';
 import { useParams, useHistory } from 'react-router-dom';
 import { getPost, deletePost } from '@apis/post';
 
-const initialState = {
-  title: '',
-  location: [],
-  sport: [],
-  text: '',
-  userId: '',
-  type: '',
-};
-
 const PostDetailSectionContainer = () => {
   const { id } = useParams();
-  const [values, setValues] = useState(initialState);
+  const [values, setValues] = useState([]);
   const { user } = useUsers();
   const history = useHistory();
   const isMine = useMemo(

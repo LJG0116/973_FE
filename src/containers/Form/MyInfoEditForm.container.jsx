@@ -21,7 +21,6 @@ const MyInfoEditContainer = (props) => {
       profileImage: '',
     },
     onSubmit: async ({ email, intro, nickname, profileImageFile }) => {
-      console.log(email, intro, user.userId, nickname, profileImageFile);
       const response = await updateMyInfo({
         email,
         intro,
@@ -44,7 +43,6 @@ const MyInfoEditContainer = (props) => {
 
   const init = useCallback(async () => {
     const { data } = await getMyInfo({ id: user.userId });
-    console.log(data);
 
     setValues({
       email: data.email,

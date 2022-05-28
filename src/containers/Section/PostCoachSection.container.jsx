@@ -3,18 +3,8 @@ import { ListSection } from '@components/Section';
 import { getCoachPosts } from '@apis/post';
 import { Paginationbar } from '@components/Bar';
 
-const initialState = [
-  {
-    title: '',
-    area: [],
-    category: [],
-    text: '',
-    userId: '',
-  },
-];
-
 const PostCoachSectionContainer = () => {
-  const [values, setValues] = useState(initialState);
+  const [values, setValues] = useState([]);
   const [page, setPage] = useState(1);
 
   const init = useCallback(async () => {
