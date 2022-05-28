@@ -2,7 +2,7 @@
 @import '@styles/constants';
 
 .root {
-  @include container__column();
+  @include container_column();
   width: 70%;
 }
 
@@ -13,39 +13,35 @@
 .wrapper {
   width: 100%;
   display: flex;
-  margin-bottom: $main__margin__size;
+  margin-bottom: $sub_size;
 }
-.post__input {
-  @include input__large();
+.input {
+  @include input_large();
   margin-right: 8px;
 }
 
-.post__textarea {
-  @include post__textarea();
+.textarea {
+  @include post_textarea();
 }
 
-.post_button_large {
+.button_large {
   @include button_large();
 }
 
 .modal {
-  @include modal();
-  display: flex;
-
-  & p {
-    margin-right: 8px;
-    flex-shrink: 0;
+  color: $sub_gray;
+  margin-right: 8px;
+  &:hover {
+    color: $primary;
+    cursor: pointer;
   }
 }
 
+.modal_wrapper {
+  width: 100%;
+  margin-bottom: $sub_size;
+}
+
 .badge {
-  display: inline-block;
-  border: 1px $primary solid;
-  border-radius: 48px;
-  padding: 4px;
-  margin: 2px;
-  color: $primary;
-  font-size: 12px;
-  cursor: pointer;
-  letter-spacing: -1px;
+  @include badge();
 }

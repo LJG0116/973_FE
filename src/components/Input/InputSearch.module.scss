@@ -7,20 +7,20 @@
   flex-direction: column;
 }
 
-.input__wrapper {
-  @include input__wrapper();
+.input_wrapper {
+  @include input_wrapper();
 }
 
-.input__search {
-  @include input__search();
+.input_search {
+  @include input_search();
 }
 
 .modal {
   @include modal();
 }
 
-.button__search {
-  @include button__search();
+.button_search {
+  @include button_search();
 }
 
 .badge {

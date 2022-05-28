@@ -1,22 +1,22 @@
 @import '@styles/mixins';
 
 .root {
-  @include container__column();
+  @include container_column();
 }
 
 .wrapper {
-  @include container__row();
+  @include container_row();
 }
 
-.input__large {
-  @include input__large();
+.input_large {
+  @include input_large();
 }
 
-.input__small {
-  @include input__small();
+.input_small {
+  @include input_small();
 }
 
-.button__small {
+.button_small {
   @include button_small();
 
   &.confirm {
@@ -36,8 +36,8 @@
   @include error();
 }
 
-.text__wrapper {
-  @include text__wrapper();
+.text_wrapper {
+  @include text_wrapper();
 }
 
 .text {

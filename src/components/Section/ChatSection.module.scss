@@ -2,7 +2,7 @@
 @import '@styles/constants';
 
 .root {
-  @include container__column();
+  @include container_column();
   justify-content: flex-start;
   width: 70%;
   height: 640px;
@@ -15,7 +15,7 @@
 .message__list {
   width: 80%;
   height: 480px;
-  border-bottom: 1px $main__gray solid;
+  border-bottom: 1px $main_gray solid;
   margin-bottom: 12px;
   overflow: scroll;
 }
@@ -35,7 +35,7 @@
   & div {
     position: relative;
     span {
-      color: $main__gray;
+      color: $main_gray;
       font-size: 12px;
       position: absolute;
       right: -50px;
@@ -51,7 +51,7 @@
   & div {
     position: relative;
     span {
-      color: $main__gray;
+      color: $main_gray;
       font-size: 12px;
       position: absolute;
       left: -50px;
@@ -60,7 +60,7 @@
   }
 }
 
-.message__input__wrapper {
+.message__input_wrapper {
   display: flex;
   justify-content: space-between;
   width: 80%;

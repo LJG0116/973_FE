@@ -24,11 +24,11 @@
   margin-bottom: 12px;
 
   & .nickname {
-    @include card__nickname();
+    @include card_nickname();
   }
 
   & .date {
-    @include card__date();
+    @include card_date();
   }
 }
 

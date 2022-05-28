@@ -2,7 +2,7 @@
 @import '@styles/constants';
 
 .root {
-  @include container__column();
+  @include container_column();
   width: 70%;
 }
 
@@ -16,27 +16,23 @@
   justify-content: space-between;
   align-items: center;
   margin-bottom: 12px;
-  & .post__author {
+  & .author {
     color: $primary;
     margin-right: 8px;
   }
 
-  & .post__date {
-    color: $main__gray;
+  & .date {
+    color: $main_gray;
     font-size: 14px;
   }
 }
-.post__input {
-  @include input__large();
-  margin-right: 8px;
+
+.textarea {
+  @include post_textarea();
+  margin-bottom: $main_size;
 }
 
-.post__textarea {
-  @include post__textarea();
-  margin-bottom: 48px;
-}
-
-.post_button_large {
+.button_large {
   @include button_large();
 }
 
@@ -44,24 +40,24 @@
   @include modal();
 }
 
-.button__wrapper {
+.button_wrapper {
   position: absolute;
-  bottom: 48px;
-  right: 48px;
+  bottom: $main_size;
+  right: $main_size;
 
   & button:first-child {
     margin-right: 4px;
   }
 }
 
-.post__button {
+.button {
   color: $primary;
   &:hover {
     color: $secondary;
   }
 }
 
-.post__title__wrapper {
+.title_wrapper {
   display: flex;
   align-items: center;
 
@@ -70,17 +66,17 @@
     margin-right: 8px;
   }
 
-  & .post__badge {
+  & .post_badge {
     width: 60px;
     font-size: 12px;
     text-align: center;
     background-color: $primary;
     border-radius: 12px;
-    color: $main__white;
+    color: $main_white;
   }
 }
 
-.badge__wrapper {
+.badge_wrapper {
   width: 100%;
   &.last {
     margin-bottom: 12px;
@@ -91,7 +87,7 @@
   @include badge();
 }
 
-.detail__wrapper {
+.detail_wrapper {
   &:last-child {
     text-align: right;
   }

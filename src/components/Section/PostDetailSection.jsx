@@ -21,28 +21,26 @@ const PostDetailSection = (props) => {
       <h1 className={styles.title}>게시글 조회</h1>
       <div className={styles.wrapper}>
         {/* 제목 */}
-        <div className={styles.post__title__wrapper}>
-          <h1 className={styles.post__title}>{values.title || '제목'}</h1>
-          <span className={styles.post__badge}>
+        <div className={styles.title_wrapper}>
+          <h1 className={styles.post_title}>{values.title || '제목'}</h1>
+          <span className={styles.post_badge}>
             {values.type === 'player' ? '플레이어' : '코치'}
           </span>
         </div>
-        <div className={styles.detail__wrapper}>
-          <span className={styles.post__author}>
-            {values.nickname || '김빡빡'}
-          </span>
+        <div className={styles.detail_wrapper}>
+          <span className={styles.author}>{values.nickname || '김빡빡'}</span>
           {!isMine && (
             <button type="button" onClick={onChatClick}>
               채팅
             </button>
           )}
-          <div className={styles.post__date}>
+          <div className={styles.date}>
             {values.date?.replace(/T/g, ' ') || '0000-00-00'}
           </div>
         </div>
       </div>
       {/* 위치 */}
-      <div className={styles.badge__wrapper}>
+      <div className={styles.badge_wrapper}>
         {values.location?.map(
           (element) =>
             element && (
@@ -53,7 +51,7 @@ const PostDetailSection = (props) => {
         )}
       </div>
       {/* 종목 */}
-      <div className={cx(styles.badge__wrapper, styles.last)}>
+      <div className={cx(styles.badge_wrapper, styles.last)}>
         {values.sport?.map(
           (element) =>
             element && (
@@ -64,18 +62,18 @@ const PostDetailSection = (props) => {
         )}
       </div>
       {/* 본문 */}
-      <div className={styles.post__textarea}>{values.text || '텍스트'}</div>
+      <div className={styles.textarea}>{values.text || '텍스트'}</div>
       {isMine && (
-        <div className={styles.button__wrapper}>
+        <div className={styles.button_wrapper}>
           <button
-            className={styles.post__button}
+            className={styles.button}
             type="button"
             onClick={onUpdateClick}
           >
             수정
           </button>
           <button
-            className={styles.post__button}
+            className={styles.button}
             type="button"
             onClick={onDeleteClick}
           >

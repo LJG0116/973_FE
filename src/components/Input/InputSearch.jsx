@@ -29,14 +29,14 @@ const InputSearch = (props) => {
   return (
     <form className={className} onSubmit={onSubmit}>
       <input
-        className={styles.input__search}
+        className={styles.input_search}
         type="text"
         name="keyword"
         value={values.keyword || ''}
         placeholder="검색어를 입력하세요."
         onChange={onChange}
       />
-      <div className={styles.input__wrapper}>
+      <div className={styles.input_wrapper}>
         <div className={styles.modal} onClick={handleLocationClick}>
           지역
         </div>
@@ -44,12 +44,12 @@ const InputSearch = (props) => {
           종목
         </div>
         <button
-          className={styles.button__search}
+          className={styles.button_search}
           type="submit"
           onClick={() => {}}
         />
       </div>
-      <div className={styles.span__wrapper}>
+      <div>
         {values.location?.map((element) => (
           <span className={styles.badge} key={element}>
             {element}
@@ -64,7 +64,7 @@ const InputSearch = (props) => {
       ) : (
         ''
       )}
-      <div className={styles.span__wrapper}>
+      <div>
         {values.sport?.map((element) => (
           <span className={styles.badge} key={element}>
             {element}

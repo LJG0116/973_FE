@@ -32,7 +32,7 @@ const PostWriteForm = (props) => {
       <div className={styles.wrapper}>
         {/* 제목 */}
         <input
-          className={styles.post__input}
+          className={styles.input}
           name="title"
           value={values.title}
           type="text"
@@ -41,10 +41,10 @@ const PostWriteForm = (props) => {
         />
       </div>
       {/* 위치 */}
-      <div className={styles.modal__wrapper}>
+      <div className={styles.modal_wrapper}>
         <div className={styles.modal} onClick={handleLocationClick}>
           지역 선택하기 &gt;
-          <div className={styles.span__wrapper}>
+          <div>
             {values.location.map((element) => (
               <span className={styles.badge} key={element}>
                 {element}
@@ -63,7 +63,7 @@ const PostWriteForm = (props) => {
         {/* 종목 */}
         <div className={styles.modal} onClick={handleSportClick}>
           종목 선택하기 &gt;
-          <div className={styles.span__wrapper}>
+          <div>
             {values.sport.map((element) => (
               <span className={styles.badge} key={element}>
                 {element}
@@ -78,12 +78,8 @@ const PostWriteForm = (props) => {
         )}
       </div>
       {/* 본문 */}
-      <textarea
-        className={styles.post__textarea}
-        name="text"
-        onChange={onChange}
-      />
-      <button className={styles.post_button_large} type="submit">
+      <textarea className={styles.textarea} name="text" onChange={onChange} />
+      <button className={styles.button_large} type="submit">
         작성
       </button>
     </form>

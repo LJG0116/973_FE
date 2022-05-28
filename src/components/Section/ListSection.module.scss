@@ -15,22 +15,22 @@
 }
 
 .list {
-  @include cards__wrapper();
+  @include cards_wrapper();
 }
 
 .link {
-  @include write__button();
+  @include write_button();
 }
 
 .element {
-  @include card__wrapper();
+  @include card_wrapper();
 
   & .nickname {
-    @include card__nickname();
+    @include card_nickname();
   }
 
   & .date {
-    @include card__date();
+    @include card_date();
   }
 
   & .post {

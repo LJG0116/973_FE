@@ -37,7 +37,7 @@ const ChatSection = (props) => {
             </div>
           ))}
       </div>
-      <form className={styles.message__input__wrapper} onSubmit={onSubmit}>
+      <form className={styles.message__input_wrapper} onSubmit={onSubmit}>
         <input
           className={styles.message__input}
           value={message}

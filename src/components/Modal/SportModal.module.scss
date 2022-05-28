@@ -15,7 +15,7 @@
 
   min-height: 100vh;
   background-color: #00000080;
-  padding: $main__padding__size;
+  padding: $main_size;
   z-index: 1;
 }
 
@@ -23,7 +23,7 @@
   position: relative;
   width: 70%;
   min-height: 70%;
-  background-color: #ffffff;
+  background-color: $main_white;
   border-radius: 12px;
   padding: 64px;
 
@@ -32,7 +32,7 @@
 
 .sub__title {
   font-weight: 400;
-  margin-bottom: $main__margin__size;
+  margin-bottom: $sub_size;
 
   &:hover {
     color: $primary;
@@ -41,15 +41,15 @@
 
 .badge__wrapper {
   border-radius: 12px;
-  border: 1px $main__gray solid;
-  padding: $sub__padding__size;
-  margin-bottom: $main__margin__size;
+  border: 1px $main_gray solid;
+  padding: $point_size;
+  margin-bottom: $sub_size;
 }
 
 .badge {
   display: inline-block;
   border: 1px $primary solid;
-  border-radius: 48px;
+  border-radius: $main_size;
   padding: 4px;
   margin: 2px;
   color: $primary;
@@ -59,12 +59,12 @@
 
   &:hover {
     background-color: $primary;
-    color: $main__white;
+    color: $main_white;
   }
 }
 
 .selected__wrapper {
-  margin-bottom: $main__margin__size;
+  margin-bottom: $sub_size;
 }
 
 .button__wrapper {

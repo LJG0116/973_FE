@@ -1,14 +1,14 @@
 @import '@styles/mixins';
 
 .root {
-  @include container__column();
+  @include container_column();
 }
 
-.input__large {
-  @include input__large();
+.input_large {
+  @include input_large();
 }
 
-.button__large {
+.button_large {
   @include button_large();
 }
 
@@ -20,8 +20,8 @@
   @include error();
 }
 
-.text__wrapper {
-  @include text__wrapper();
+.text_wrapper {
+  @include text_wrapper();
 }
 
 .text {

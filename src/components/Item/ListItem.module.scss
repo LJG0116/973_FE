@@ -2,16 +2,16 @@
 @import '@styles/constants';
 
 .root {
-  @include card__wrapper();
-  height: 200px;
+  @include card_wrapper();
+  height: 120px;
   overflow: scroll;
 
   & .nickname {
-    @include card__nickname();
+    @include card_nickname();
   }
 
   & .date {
-    @include card__date();
+    @include card_date();
   }
 
   & .post {
@@ -26,6 +26,11 @@
     }
 
     & .badges {
+      width: 30%;
+      position: absolute;
+      top: 0;
+      right: 0;
+
       text-align: right;
 
       & .badge {

@@ -1,3 +1,3 @@
 export const DefaultTheme = {
-  primary: '#ffffff',
+  primary: '$main_white',
 };

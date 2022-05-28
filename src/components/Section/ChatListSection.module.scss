@@ -1,7 +1,7 @@
 @import '@styles/mixins';
 
 .root {
-  @include container__column();
+  @include container_column();
 }
 
 .title {
@@ -20,7 +20,7 @@
 }
 
 .profile {
-  width: 48px;
+  width: $main_size;
   height: auto;
   margin-right: 12px;
   border-radius: 50%;

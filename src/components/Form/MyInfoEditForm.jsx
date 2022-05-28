@@ -28,17 +28,17 @@ const MyInfoEditForm = (props) => {
       <button className={styles.signup} type="button" onClick={onClick}>
         로그아웃
       </button>
-      <div className={styles.profile__wrapper}>
-        <div className={styles.profile__upload} onClick={handleClick}>
+      <div className={styles.wrapper}>
+        <div className={styles.upload} onClick={handleClick}>
           <input
-            className={styles.disabled__input}
+            className={styles.disabled}
             type="file"
             name="profileImage"
             ref={inputRef}
             onChange={onUpload}
           />
           <img
-            className={styles.profile__image}
+            className={styles.image}
             src={
               values.profileImage ||
               'https://973s3.s3.ap-northeast-2.amazonaws.com/3c861103-5d9d-4d1a-af4b-7565571cbac0.png'
@@ -46,9 +46,9 @@ const MyInfoEditForm = (props) => {
             alt=""
           />
         </div>
-        <div className={styles.profile__input__wrapper}>
+        <div className={styles.input_wrapper}>
           <input
-            className={cx(styles.profile__input, styles.profile__email)}
+            className={cx(styles.input, styles.email)}
             type="text"
             name="email"
             value={values.email}
@@ -56,9 +56,9 @@ const MyInfoEditForm = (props) => {
             onChange={onChange}
             disabled
           />
-          <div className={styles.profile__nickname__wrapper}>
+          <div className={styles.nickname_wrapper}>
             <input
-              className={styles.profile__input}
+              className={styles.input}
               type="text"
               name="nickname"
               value={values.nickname}
@@ -66,7 +66,7 @@ const MyInfoEditForm = (props) => {
               onChange={onChange}
             />
             <button
-              className={styles.profile_button_small}
+              className={styles.button_small}
               type="button"
               name="nickname"
               onClick={onEmailClick}
@@ -77,14 +77,14 @@ const MyInfoEditForm = (props) => {
         </div>
       </div>
       <textarea
-        className={styles.profile__textarea}
+        className={styles.textarea}
         type="text"
         name="intro"
         value={values.intro || ''}
         placeholder="멋진 한 줄 소개를 입력해주세요."
         onChange={onChange}
       />
-      <button className={styles.profile_button_large} type="submit">
+      <button className={styles.button_large} type="submit">
         수정
       </button>
     </form>

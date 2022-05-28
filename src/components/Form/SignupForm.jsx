@@ -24,7 +24,7 @@ const SignupForm = (props) => {
       <h1 className={styles.title}>회원가입</h1>
       <div className={styles.wrapper}>
         <input
-          className={styles.input__small}
+          className={styles.input_small}
           type="text"
           value={values.email || ''}
           name="email"
@@ -32,7 +32,7 @@ const SignupForm = (props) => {
           onChange={onChange}
         />
         <button
-          className={styles.button__small}
+          className={styles.button_small}
           type="button"
           onClick={onEmailClick}
         >
@@ -42,7 +42,7 @@ const SignupForm = (props) => {
       <div className={styles.error}>{errors.email}&nbsp;</div>
       <div className={styles.wrapper}>
         <input
-          className={styles.input__small}
+          className={styles.input_small}
           type="text"
           value={values.nickname || ''}
           name="nickname"
@@ -50,7 +50,7 @@ const SignupForm = (props) => {
           onChange={onChange}
         />
         <button
-          className={styles.button__small}
+          className={styles.button_small}
           type="button"
           onClick={onNicknameClick}
         >
@@ -59,7 +59,7 @@ const SignupForm = (props) => {
       </div>
       <div className={styles.error}>{errors.nickname}&nbsp;</div>
       <input
-        className={styles.input__large}
+        className={styles.input_large}
         type="password"
         value={values.password || ''}
         name="password"
@@ -68,7 +68,7 @@ const SignupForm = (props) => {
       />
       <div className={styles.error}>{errors.password}&nbsp;</div>
       <input
-        className={styles.input__large}
+        className={styles.input_large}
         type="password"
         value={values.confirmPassword || ''}
         name="confirmPassword"
@@ -78,13 +78,13 @@ const SignupForm = (props) => {
       <div className={styles.error}>{errors.passwordCheck}&nbsp;</div>
       <div className={styles.wrapper}>
         <button
-          className={cx(styles.button__small, styles.confirm)}
+          className={cx(styles.button_small, styles.confirm)}
           type="submit"
         >
           회원가입
         </button>
         <button
-          className={cx(styles.button__small, styles.confirm)}
+          className={cx(styles.button_small, styles.confirm)}
           type="button"
           onClick={() => history.push('/')}
         >

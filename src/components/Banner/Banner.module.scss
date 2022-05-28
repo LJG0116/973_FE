@@ -2,31 +2,17 @@
 @import '@styles/mixins';
 
 .root {
-  @include container__column();
+  @include container_column();
   width: 100%;
   height: 420px;
   background-color: $primary;
-  padding-right: $main__size;
-  margin-bottom: $main__size;
+  padding-right: $main_size;
+  margin-bottom: $main_size;
 }
 
-.banner__title {
+.title {
   font-size: 108px;
   font-weight: 700;
-  color: #ffffff;
+  color: $main_white;
   font-style: italic;
-}
-
-.banner__image {
-  width: 640px;
-  height: 360px;
-}
-
-.banner__text {
-  font-size: 48px;
-  font-weight: 700;
-  color: #ffffff;
-  text-align: end;
-  line-height: 1;
-  white-space: nowrap;
 }

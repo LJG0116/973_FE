@@ -12,15 +12,15 @@ const ButtonInput = (props) => {
   return (
     <form className={className} onClick={() => history.push('/search')}>
       <input
-        className={styles.input__search}
+        className={styles.search}
         type="text"
         placeholder="클릭 시 검색페이지로 이동합니다."
         disabled
       />
-      <div className={styles.input__wrapper}>
+      <div className={styles.input_wrapper}>
         <div className={styles.modal}>지역</div>
         <div className={styles.modal}>종목</div>
-        <button className={styles.button__search} type="submit" />
+        <button className={styles.button_search} type="submit" />
       </div>
     </form>
   );

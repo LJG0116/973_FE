@@ -1,13 +1,13 @@
 @import '@styles/constants';
 
-@mixin container__column {
+@mixin container_column {
   position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   flex-grow: 0;
-  padding: $main__padding__size;
+  padding: $main_size;
 
   width: 570px;
 
@@ -15,7 +15,7 @@
   box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;
 }
 
-@mixin container__row {
+@mixin container_row {
   display: flex;
   width: 100%;
   justify-content: space-between;
@@ -34,22 +34,22 @@
   }
 }
 
-@mixin input__large {
+@mixin input_large {
   width: 100%;
-  height: $main__height;
+  height: $main_size;
 
   border-radius: 12px;
-  border: 1px $main__gray solid;
+  border: 1px $main_gray solid;
 
   padding: 0 8px;
 }
 
-@mixin input__small {
+@mixin input_small {
   width: 100%;
-  height: $main__height;
+  height: $main_size;
 
   border-radius: 12px;
-  border: 1px $main__gray solid;
+  border: 1px $main_gray solid;
 
   padding: 0 0.5rem;
   margin-right: 0.5rem;
@@ -57,13 +57,13 @@
 
 @mixin button_large {
   width: 100%;
-  height: $main__height;
+  height: $main_size;
 
   border-radius: 12px;
   border: 0;
 
   background-color: $primary;
-  color: $main__white;
+  color: $main_white;
 
   &:hover {
     background-color: $secondary;
@@ -73,13 +73,13 @@
 
 @mixin button_small {
   width: 20%;
-  height: $main__height;
+  height: $main_size;
 
   border-radius: 12px;
   border: 0;
 
   background-color: $primary;
-  color: $main__white;
+  color: $main_white;
 
   &:hover {
     background-color: $secondary;
@@ -92,7 +92,7 @@
   margin-bottom: 32px;
 }
 
-@mixin text__wrapper {
+@mixin text_wrapper {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -102,7 +102,7 @@
 @mixin error {
   margin: 12px 0;
   text-align: center;
-  color: $main__red;
+  color: $main_red;
   font-size: 12px;
 }
 
@@ -117,7 +117,7 @@
   width: 100%;
   font-size: 18px;
   color: $secondary;
-  margin-bottom: $main__margin__size;
+  margin-bottom: $sub_size;
   cursor: pointer;
 
   &:hover {
@@ -125,18 +125,18 @@
   }
 }
 
-@mixin post__textarea {
+@mixin post_textarea {
   width: 100%;
   height: 216px;
   resize: none;
 
   border-radius: 12px;
-  border: 1px $main__gray solid;
-  margin-bottom: $main__margin__size;
+  border: 1px $main_gray solid;
+  margin-bottom: $sub_size;
   padding: 12px;
 }
 
-@mixin input__wrapper {
+@mixin input_wrapper {
   position: absolute;
   display: flex;
   align-items: center;
@@ -152,8 +152,8 @@
   }
 }
 
-@mixin input__search {
-  @include input__large();
+@mixin input_search {
+  @include input_large();
   border-radius: 24px;
   width: 100%;
   margin-bottom: 16px;
@@ -163,10 +163,10 @@
 
 @mixin modal {
   width: 36px;
-  color: #a8a8a8;
+  color: $main_white;
 }
 
-@mixin button__search {
+@mixin button_search {
   width: 36px;
   height: 36px;
   background-size: contain;
@@ -176,7 +176,7 @@
 @mixin badge {
   display: inline-block;
   border: 1px $primary solid;
-  border-radius: 48px;
+  border-radius: $main_size;
   padding: 4px;
   margin: 2px;
   color: $primary;
@@ -185,15 +185,15 @@
   letter-spacing: -1px;
 }
 
-@mixin cards__wrapper {
+@mixin cards_wrapper {
   text-align: left;
-  margin-bottom: $main__margin__size;
+  margin-bottom: $sub_size;
 }
 
-@mixin write__button {
+@mixin write_button {
   position: absolute;
   top: 96px;
-  right: 48px;
+  right: $main_size;
 
   &:hover {
     color: $primary;
@@ -201,22 +201,22 @@
   }
 }
 
-@mixin card__wrapper {
+@mixin card_wrapper {
   padding: 12px;
   border-bottom: #f5f5f5 solid;
   cursor: pointer;
 }
 
-@mixin card__nickname {
+@mixin card_nickname {
   color: $primary;
   margin-right: 8px;
 }
 
-@mixin card__date {
-  color: $sub__gray;
+@mixin card_date {
+  color: $sub_gray;
 }
 
 @mixin nodata {
-  color: $main__gray;
+  color: $main_gray;
   text-align: center;
 }
