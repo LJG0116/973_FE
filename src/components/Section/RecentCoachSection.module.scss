@@ -14,23 +14,41 @@
 }
 
 .cards__wrapper {
-  @include cards__wrapper();
-}
-
-.write__button {
-  @include write__button();
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
 }
 
 .card__wrapper {
-  @include card__wrapper();
+  width: 30%;
+  border-radius: 12px;
+  padding: 16px;
+  text-align: left;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 12px 25px -6px;
+  margin: 8px;
+
+  & h2 {
+    margin-bottom: 12px;
+  }
+
+  & .text {
+    width: 70%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
 }
 
-.card__nickname {
-  @include card__nickname();
-}
+.card__profile {
+  margin-bottom: 12px;
 
-.card__date {
-  @include card__date();
+  & .card__nickname {
+    @include card__nickname();
+  }
+
+  & .card__date {
+    @include card__date();
+  }
 }
 
 .nodata {
@@ -41,21 +59,6 @@
   @include badge();
 }
 
-.card__post {
-  position: relative;
-}
-
-.text {
-  width: 70%;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
 .badge__wrapper {
-  position: absolute;
-  top: 0;
-  right: 0;
-
   text-align: right;
 }

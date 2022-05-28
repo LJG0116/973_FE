@@ -24,7 +24,10 @@ const RecentCoachPlayer = (props) => {
                 history.push(`/view/${element.postId}`);
               }}
             >
+              <h2>{element.title}</h2>
+              <div className={styles.text}>{element.text}</div>
               <div className={styles.card__profile}>
+                {/* <img></img> */}
                 <span className={styles.card__nickname}>
                   {element.nickname}
                 </span>
@@ -32,39 +35,35 @@ const RecentCoachPlayer = (props) => {
                   {element.date?.replace(/T/g, ' ')}
                 </span>
               </div>
-              <div className={styles.card__post}>
-                <h2>{element.title}</h2>
-                <div className={styles.text}>{element.text}</div>
-                <div className={styles.badge__wrapper}>
-                  <div>
-                    {element.area?.map(
-                      (element) =>
-                        element && (
-                          <span
-                            className={styles.badge}
-                            value={element}
-                            key={element}
-                          >
-                            {element}
-                          </span>
-                        )
-                    )}
-                  </div>
-                  {/* 종목 */}
-                  <div>
-                    {element.category?.map(
-                      (element) =>
-                        element && (
-                          <span
-                            className={styles.badge}
-                            value={element}
-                            key={element}
-                          >
-                            {element}
-                          </span>
-                        )
-                    )}
-                  </div>
+              <div className={styles.badge__wrapper}>
+                <div>
+                  {element.area?.map(
+                    (element) =>
+                      element && (
+                        <span
+                          className={styles.badge}
+                          value={element}
+                          key={element}
+                        >
+                          {element}
+                        </span>
+                      )
+                  )}
+                </div>
+                {/* 종목 */}
+                <div>
+                  {element.category?.map(
+                    (element) =>
+                      element && (
+                        <span
+                          className={styles.badge}
+                          value={element}
+                          key={element}
+                        >
+                          {element}
+                        </span>
+                      )
+                  )}
                 </div>
               </div>
             </div>
