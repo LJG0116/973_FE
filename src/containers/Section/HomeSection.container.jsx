@@ -2,7 +2,7 @@ import React, { useEffect, useState, useCallback } from 'react';
 import { Banner } from '@components/Banner';
 import { ButtonInput } from '@components/Button';
 import { getRecentCoach, getRecentPlayer } from '@apis/post';
-import { RecentCoachSection, RecentPlayerSection } from '@components/Section';
+import { CardSection } from '@components/Section';
 
 const HomeSectionContainer = (props) => {
   const [player, setPlayer] = useState({});
@@ -23,8 +23,8 @@ const HomeSectionContainer = (props) => {
     <>
       <Banner />
       <ButtonInput />
-      <RecentPlayerSection values={player} />
-      <RecentCoachSection values={coach} />
+      <CardSection values={player} title="플레이어" />
+      <CardSection values={coach} title="코치" />
     </>
   );
 };

@@ -23,7 +23,6 @@ const PostSearchSectionContainer = () => {
         page: 1,
       });
       setSearch(response.data);
-      //setValues({});
     },
     validate: () => {},
   });

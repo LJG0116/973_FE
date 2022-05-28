@@ -1,0 +1,45 @@
+@import '@styles/mixins';
+@import '@styles/constants';
+
+.root {
+  width: 30%;
+  max-height: 200px;
+  overflow: scroll;
+  border-radius: 12px;
+  padding: 18px;
+  text-align: left;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 12px 25px -6px;
+  margin: 8px;
+}
+
+.text {
+  width: 70%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-bottom: 12px;
+}
+
+.profile {
+  margin-bottom: 12px;
+
+  & .nickname {
+    @include card__nickname();
+  }
+
+  & .date {
+    @include card__date();
+  }
+}
+
+.nodata {
+  @include nodata();
+}
+
+.badge {
+  @include badge();
+}
+
+.badges {
+  text-align: right;
+}

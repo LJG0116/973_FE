@@ -25,8 +25,6 @@ const PostPlayerSectionContainer = () => {
   const handleClick = async (e) => {
     const { id, value } = e.target;
 
-    console.log(page);
-
     if (value) {
       const response = await getPlayerPosts({ page: value });
       setValues(response.data);

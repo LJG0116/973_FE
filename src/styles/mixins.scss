@@ -217,7 +217,6 @@
 }
 
 @mixin nodata {
-  font-size: $main__margin__size;
-  color: $sub__gray;
+  color: $main__gray;
   text-align: center;
 }

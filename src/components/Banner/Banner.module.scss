@@ -3,7 +3,7 @@
 
 .root {
   @include container__column();
-  width: 80%;
+  width: 100%;
   height: 420px;
   background-color: $primary;
   padding-right: $main__size;

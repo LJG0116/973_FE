@@ -1,0 +1,29 @@
+@import '@styles/mixins';
+@import '@styles/constants';
+
+.root {
+  width: 100%;
+}
+
+.my {
+  text-align: left;
+}
+
+.title {
+  text-align: left;
+  font-size: 24px;
+  margin-bottom: 18px;
+  color: $primary;
+}
+
+.list {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.nodata {
+  width: 100%;
+  color: $main__gray;
+  text-align: center;
+}

@@ -25,8 +25,6 @@ const PostCoachSectionContainer = () => {
   const handleClick = async (e) => {
     const { id, value } = e.target;
 
-    console.log(page);
-
     if (value) {
       const response = await getCoachPosts({ page: value });
       setValues(response.data);
