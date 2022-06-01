@@ -17,6 +17,7 @@
 
 .modal {
   @include modal();
+  color: $main_gray;
 }
 
 .button_search {
