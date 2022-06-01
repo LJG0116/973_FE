@@ -24,6 +24,11 @@
   @include button_search();
 }
 
+.badges {
+  width: 100%;
+  text-align: left;
+}
+
 .badge {
   @include badge();
 }

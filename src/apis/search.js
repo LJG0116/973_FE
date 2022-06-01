@@ -5,7 +5,7 @@ export const searchPost = async ({
   location,
   sport,
   keyword,
-  type = null,
+  type,
 }) => {
   const response = await GET({
     url: `/search/post/${page}`,

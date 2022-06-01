@@ -16,7 +16,7 @@ const PostSearchSectionContainer = () => {
         keyword,
         sport,
         location,
-        type: '',
+        type,
         page: 1,
       });
       setSearch(response.data);

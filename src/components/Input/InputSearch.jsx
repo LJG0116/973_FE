@@ -37,6 +37,24 @@ const InputSearch = (props) => {
         onChange={onChange}
       />
       <div className={styles.input_wrapper}>
+        <div>
+          <input
+            type="radio"
+            name="type"
+            id="player"
+            value="player"
+            onChange={onChange}
+          />
+          <label for="player">플레이어</label>
+          <input
+            type="radio"
+            name="type"
+            id="coach"
+            value="coach"
+            onChange={onChange}
+          />
+        </div>
+        <label for="coach">코치</label>
         <div className={styles.modal} onClick={handleLocationClick}>
           지역
         </div>
@@ -49,7 +67,7 @@ const InputSearch = (props) => {
           onClick={() => {}}
         />
       </div>
-      <div>
+      <div className={styles.badges}>
         {values.location?.map((element) => (
           <span className={styles.badge} key={element}>
             {element}
@@ -64,7 +82,7 @@ const InputSearch = (props) => {
       ) : (
         ''
       )}
-      <div>
+      <div className={styles.badges}>
         {values.sport?.map((element) => (
           <span className={styles.badge} key={element}>
             {element}
